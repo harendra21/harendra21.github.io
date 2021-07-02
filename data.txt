@@ -1,0 +1,87 @@
+<span id="a">welcome@harendra.tech</span>:<span id="b">~</span><span id="c">$</span> Welcome
+
+<span id="a">harendra@kumar</span>:<span id="b">~</span><span id="c">$</span> cat about-me.txt<br/>
+Hello I'm Harendra Kumar Kanojiya, Fullstack Developer working @Aakash Edu Tech Pvt Ltd. I have total 4+ years of experiance in Fullstack Web Development using PHP (Laravel & Codeigniter), MySql, Javascript (Angular 6,8 & Angular Js), React Js, Node Js, HTML and CSS.<!--- "<span id="k">Code for Everyone</span>". --->
+
+<span id="a">personal@details</span>:<span id="b">~</span><span id="c">$</span> cat personal-details.txt
+
+Birthday: 7 Jan 1996
+Website: <a href="https://www.harendra.tech">www.harendra.tech</a>
+Phone: +91-9559058446
+City: Gola Gokaran Nath, Lakhimpur Kheri, U.P., India
+Age: 26 Years
+Degree: B.Tech in Computer Science (2017)
+Email: harendraverma21@gmail.com
+
+<span id="a">my@skills</span>:<span id="b">~</span><span id="c">$</span> cat skils.txt
+
+Here are the skills which I am using to develope web application front end and backend both.
+
+PHP -> SERVER SIDE SCRIPTING LANGUAGE
+LARAVEL -> A FRAMEWORK OF PHP
+CODEIGNITER -> A FRAMEWORK OF PHP
+MYSQL -> DATABASE
+IONIC FRAMEWORK -> FOR HYBRID MOBILE APPLICATION DEVELOPMENT
+NODE.JS -> SERVER SIDE JAVASCRIPT FRAMEWORD
+CAKE PHP -> A FRAMEWORK OF PHP
+AWS -> CLOUD SERVICE
+JAVASCRIPT -> CLIENT SIDE PROGRAMMING LANGUAGE
+ANGULAR 2 to 10 -> A FRAMEWORK OF JAVASCRIPT FOR SINGLE PAGE APPLICATION
+ANGULAR JS -> A FRAMEWORK OF JAVASCRIPT FOR SINGLE PAGE APPLICATION
+REACT JS -> A FRAMEWORK OF JAVASCRIPT FOR SINGLE PAGE APPLICATION
+BOOTSTRAP -> A FRAMEWORK OF CSS FOR RESPONSIVE DESIGN
+HTML MARKUP -> LANGUAGE FOR WEB PAGES
+CSS -> FOR STYLING
+MATERIALIZE CSS -> AFRAMEWORK OF CSS FOR RESPONSIVE DESIGN BASED ON MATERIAL DESIGN PATTERN
+
+Some other terms which i'm using for my development process - Rest Api,PWA, Google Cloud Plarform, Oracle Cloud, Firebase, AWS Compute, AWS RDS, AWS Cloudfront e.t.c.
+
+<span id="a">my@resume</span>:<span id="b">~</span><span id="c">$</span> cat resume.pdf
+
+<b><a href="https://drive.google.com/file/d/1U03L-gMEwRXa1ymJhFlsC3Lidt0GeAly/view?usp=sharing">Download From Here</a></b>
+<u>Education</u>
+
+B.TECH IN COMPUTER SCIENCE
+    > 2013 - 2017
+    > Shri Ram Murti Smarak College of Eng. & Tech. Unnao, India
+
+SCHOOL (HIGH & INTERMEDIATE)
+    > 2010 - 2012
+    > Saraswati Vidhya Mandir Gola, Kheri
+
+<u>Professional Experience</u>
+
+PHP DEVELOPER
+    > July,2019 - Present
+    > Aakash Edu Tech Pvt. Ltd, Gurgaon, Haryana, India
+    > Responsible to develope and manage platform and optimize existing system.
+    
+APPLICATION DEVELOPER
+    > Sept,2019 - July,2020
+    > Queppelin Technology Solutions Pvt. Ltd, Gurgaon, Haryana, India
+    > Rest api development and Database management.
+    > Responsible to develop web application and android application
+    > Helping to manage cloud based services.
+
+WEB DEVELOPER
+    > May,2018 - Aug,2019
+    > Aabhyasa Technologies Pvt. Ltd, Lucknow, Uttar Pradesh, India
+    > Rest api development  and Database management.
+    > Responsible to develop web application
+    > Helping to manage cloud based services.
+
+<span id="a">contact@me</span>:<span id="b">~</span><span id="c">$</span> cat contact.txt
+
+Email > harendraverma21@gmail.com
+Mobile > +91-9559058446
+Discord > <a href="https://discord.gg/9q6RsuEd">https://discord.gg/9q6RsuEd</a>
+Facebook > <a href="https://www.facebook.com/harendraverma21/">https://www.facebook.com/harendraverma21/</a>
+Whatsapp > <a href="https://wa.me/919559058446">https://wa.me/919559058446</a>
+Skype > <a href="https://join.skype.com/invite/g2ZWBb6aEDIH">https://join.skype.com/invite/g2ZWBb6aEDIH</a>
+LinkedIn > <a href="https://www.linkedin.com/in/harendra21/">https://www.linkedin.com/in/harendra21/</a>
+
+Github - <a href="https://github.com/harendra21">Github</a>
+My Blog - <a href="http://hackeradda.com/">Hackeradda</a>
+Medium - <a href="https://harendraverma21.medium.com/">Medium</a>
+
+Thank you :)
