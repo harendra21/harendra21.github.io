@@ -1,0 +1,117 @@
+
+<html> 
+    <head> 
+      <title>Harendra Kumar Kanojiya</title>
+      <meta charset="UTF-8">
+      <meta name="keywords" content="harendra kumar kanojiya - fullstack web developer">
+      <meta name="description" content="Hello I'm Harendra Kumar Kanojiya, Fullstack Developer working @Aakash Edu Tech Pvt Ltd. I have total 4+ years of experiance in Fullstack Web Development.">
+      <meta name="author" content="Harendra Kumar Kanojiya">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="index.css">
+    </head> 
+    <body>
+      <div class="header">
+        <a href="./index.html">Home</a>
+        <a href="./magic.html">Magic</a>
+      </div>
+      <div id="console">
+        <div id="a"></div>
+        <div class="a" id="weather"></div>
+      </div> 
+        
+        <script>
+          locationInfo();
+          function locationInfo(){
+            $.ajax({
+              url: "https://freegeoip.app/json/",
+              dataType: "json",
+              type: "GET",
+              async: true,
+              success: function (data) {
+                var { city, country_code, country_name, ip, latitude, longitude, region_code, region_name, time_zone, zip_code } = data;
+                var str = "I'm guessing about you. I think you are from "+city+", "+region_name+" ("+region_code+"), "+country_name+"("+country_code+"). Your current timezone is "+time_zone+" and your pin code is "+zip_code+"."
+                //document.getElementById('a').innerHTML = str
+                var location = city+","+region_name+","+country_name;
+                typeWriter(str, 'a',null, location);
+               
+                
+              },
+              error: function (xhr, exception) {
+                var msg = "";
+                if (xhr.status === 0) {
+                    msg = "Not connect.\n Verify Network." + xhr.responseText;
+                } else if (xhr.status == 404) {
+                    msg = "Requested page not found. [404]" + xhr.responseText;
+                } else if (xhr.status == 500) {
+                    msg = "Internal Server Error [500]." +  xhr.responseText;
+                } else if (exception === "parsererror") {
+                    msg = "Requested JSON parse failed.";
+                } else if (exception === "timeout") {
+                    msg = "Time out error." + xhr.responseText;
+                } else if (exception === "abort") {
+                    msg = "Ajax request aborted.";
+                } else {
+                    msg = "Error:" + xhr.status + " " + xhr.responseText;
+                }
+              }
+            });
+          }
+
+          function weatherInfo(location){
+            $.ajax({
+              url: "https://api.weatherapi.com/v1/current.json?key=e29a9a2bf38e48ae89b172031210207&q="+location+"&days=1&aqi=no&alerts=no",
+              dataType: "json",
+              type: "GET",
+              async: true,
+              success: function (data) {
+                const temp = data.current.temp_c
+                const wind_speed = data.current.wind_kph
+                const feelslike_c = data.current.feelslike_c
+                const condiation = data.current.condition.text
+                var weather_str = "Current temprature of your city is "+temp+"°C, wind speed is "+wind_speed+" KPH and you will feel like "+feelslike_c+"°C. Weather condiation is "+condiation+".";
+                //document.getElementById('weather').innerHTML = weather_str
+                typeWriter(weather_str, 'weather');
+              },
+              error: function (xhr, exception) {
+                var msg = "";
+                if (xhr.status === 0) {
+                    msg = "Not connect.\n Verify Network." + xhr.responseText;
+                } else if (xhr.status == 404) {
+                    msg = "Requested page not found. [404]" + xhr.responseText;
+                } else if (xhr.status == 500) {
+                    msg = "Internal Server Error [500]." +  xhr.responseText;
+                } else if (exception === "parsererror") {
+                    msg = "Requested JSON parse failed.";
+                } else if (exception === "timeout") {
+                    msg = "Time out error." + xhr.responseText;
+                } else if (exception === "abort") {
+                    msg = "Ajax request aborted.";
+                } else {
+                    msg = "Error:" + xhr.status + " " + xhr.responseText;
+                }
+              }
+            });
+          }
+
+          var speed = 50;
+
+          function typeWriter(txt, id , i = 0, location = null) {
+            if (i < txt.length) {
+              document.getElementById(id).innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed, txt, id , i, location);
+            }else{
+              if(location){
+                weatherInfo(location);
+              }
+            }
+          }
+          
+
+        </script>
+
+
+    </body> 
+  </html> 
+  

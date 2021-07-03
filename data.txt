@@ -1,4 +1,4 @@
-<span id="a">welcome@harendra.tech</span>:<span id="b">~</span><span id="c">$</span> Welcome
+<span id="a">welcome@harendra</span>:<span id="b">~</span><span id="c">$</span> Welcome
 
 <span id="a">harendra@kumar</span>:<span id="b">~</span><span id="c">$</span> cat about-me.txt<br/>
 Hello I'm Harendra Kumar Kanojiya, Fullstack Developer working @Aakash Edu Tech Pvt Ltd. I have total 4+ years of experiance in Fullstack Web Development using PHP (Laravel & Codeigniter), MySql, Javascript (Angular 6,8 & Angular Js), React Js, Node Js, HTML and CSS.<!--- "<span id="k">Code for Everyone</span>". --->
@@ -85,3 +85,5 @@ My Blog - <a href="http://hackeradda.com/">Hackeradda</a>
 Medium - <a href="https://harendraverma21.medium.com/">Medium</a>
 
 Thank you :)
+
+<a href="magic.html">Click here for magic</a>
