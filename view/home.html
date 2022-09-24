@@ -1,0 +1,56 @@
+<div ng-controller="HomeCtrl">
+    <div class="jumbotron text-center">
+        <img src="{{ record.image }}" alt="{{ record.name }}" class="img-responsive img-centered img-thumbnail profile-image">
+        <h1>{{ record.name }}</h1>
+        <h4>{{ record.heading }}</h4>
+        <a href="{{ record.resume }}">Download Resume</a>
+    </div>
+    <br> <br>
+
+    <div class="card bg-dark">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>About</h5>
+                    <p>{{ record.about_l1 }}</p>
+                    <br>
+                    <p>{{ record.about_l2 }}</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Basic Information</h5>
+                    <div class="row">
+                        <div class="col-5"><b>DATE OF BIRTH:</b></div>
+                        <div class="col-7">{{ record.dob }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><b>EMAIL:</b></div>
+                        <div class="col-7">{{ record.email }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><b>PHONE:</b></div>
+                        <div class="col-7">{{ record.phone }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><b>ADDRESS:</b></div>
+                        <div class="col-7">{{ record.address }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><b>LANGUAGES:</b></div>
+                        <div class="col-7">{{ record.languages }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="text-center">↓</div>
+<div ng-include="'view/experiance.html'"></div>
+<div class="text-center">↓</div>
+<div ng-include="'view/skills.html'"></div>
+<div class="text-center">↓</div>
+<div ng-include="'view/projects.html'"></div>
+<div class="text-center">↓</div>
+<div ng-include="'view/education.html'"></div>
+<div class="text-center">↓</div>
+<div ng-include="'view/contact-me.html'"></div>

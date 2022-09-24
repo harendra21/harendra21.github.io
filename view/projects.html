@@ -1,0 +1,20 @@
+<div ng-controller="ProjectCtrl">
+    <div class="jumbotron text-center">
+        <h3>Projects</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" ng-repeat="record in records">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <h4>{{ record.title }}</h4>
+                    <p>☛ {{ record.description }}</p>
+                    <p>☛ {{ record.tech }}</p>
+                    <span target="_blank" ng-if="record.link"><a href="{{ record.link }}">Link</a></span>
+                    <span target="_blank" ng-if="record.github"><a href="{{ record.github }}">Github</a></span>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

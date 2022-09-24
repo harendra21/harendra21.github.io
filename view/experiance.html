@@ -1,0 +1,17 @@
+<div ng-controller="ExperianceCtrl">
+    <div class="jumbotron text-center">
+        <h3>Work Experience ({{ total }})</h3>
+    </div>
+
+    <div ng-repeat="record in records">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h4>{{ record.company }}</h4>
+                <p>☛ <b>{{ record.designation }}</b> <small>{{ record.location }}</small> (<small>{{ record.dates }} </small>)</p>
+                <p>☛ {{ record.description }}</p>
+                <p>☛ <b>Skills:</b> {{ record.skills }}</p>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

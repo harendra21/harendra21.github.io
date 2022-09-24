@@ -1,0 +1,16 @@
+<div ng-controller="EducationCtrl">
+    <div class="jumbotron text-center">
+        <h3>Education</h3>
+    </div>
+
+    <div ng-repeat="record in records">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h4>{{ record.college }}</h4>
+                <p>☛ {{ record.degree }}</p>
+                <p>☛ {{ record.dates }}</p>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
