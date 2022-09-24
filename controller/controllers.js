@@ -68,9 +68,11 @@
       { "title" : "Laravel", "rating" : 6 },
       { "title" : "Angular Js", "rating" : 8 },
       { "title" : "Angular 2+", "rating" : 6 },
-      { "title" : "Frontend (HTML + CSS)", "rating" : 7 },
+      { "title" : "Frontend (HTML + CSS)", "rating" : 6 },
+      { "title" : "Backend", "rating" : 8 },
       { "title" : "Linux", "rating" : 8 },
-      { "title" : "Ruby On Rails", "rating" : 5 }
+      { "title" : "Ruby On Rails", "rating" : 5 },
+      { "title" : "Python", "rating" : 5 }
     ]  
   },]);
 
