@@ -85,7 +85,7 @@
         "link": null,
         "github": null
       },{
-        "title": "QOTD",
+        "title": "QOTD (Quiz Of The Day)",
         "tech": "Golang. PostgreSQL. Beego",
         "description": "Golang application to conduct the daily tests and measure the efficency of student based on diffrent aspects to create the report.",
         "link": null,
@@ -130,19 +130,19 @@
         "title": "Gullyy - Betting game",
         "tech": "Angular 10. Laravel. MySql. AWS (EC2, RDS)",
         "description": "This PWA application was built on Angular 10",
-        "link": null,
+        "link": "https://gullyy.com/",
         "github": null
       },{
         "title": "OTT Platform",
         "tech": "Angular 10. Laravel. MySql. AWS (S3, Elastic Encoder, CDN, EC2)",
         "description": "This web application provides ondimand videos webinars",
-        "link": null,
+        "link": "https://emorize.com/",
         "github": null
       },{
         "title": "Online Audio Training (OAT)",
         "tech": "Laravel. Html. CSS. Bootstrap. AWS (EC2)",
         "description": "This web application is used to conduct online webinars for doctors over goto meeting.",
-        "link": null,
+        "link": "https://www.onlinevodcasttraining.com/",
         "github": null
       },{
         "title": "Multivendor ecommerce website",
