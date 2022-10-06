@@ -161,11 +161,11 @@
         "degree": "Bachelor’s Degree in Computer Science",
         "dates": "Aug, 2013 to May, 2017"
       },{ 
-        "college": "Sarswati vidhya maidir inter college, Gola",
+        "college": "Sarswati Vidhya Mandir Inter College, Gola Gokaran Nath",
         "degree": "Intermediate with Math",
         "dates": "2010 to 2012"
       },{ 
-        "college": "Sarswati vidhya maidir inter college, Gola",
+        "college": "Sarswati Vidhya Mandir Inter College, Gola Gokaran Nath",
         "degree": "High School with Computer",
         "dates": "2009 to 2010"
       },
