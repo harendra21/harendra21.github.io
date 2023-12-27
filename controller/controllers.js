@@ -14,16 +14,24 @@
       return message
     }
     var today = new Date()
-    var last_start = new Date(2020,07,15)
+    var last_start = new Date(2022,10,31)
     last_experiance = $scope.calcDate(today,last_start)
-    var start = new Date(2017,05,15)
+    var start = new Date(2017,5,15)
     $scope.total = $scope.calcDate(today,start)
     $scope.records = [
       {
+        "company": "Vendasta Technology",
+        "designation": "Software Development Engineer 3",
+        "location": "Remote Location (Canada)",
+        "dates": "Oct, 2022 - Present. "+last_experiance,
+        "description": "Started working as software developer with golang development experiance. Responsible to create and manage microservices using golang.",
+        "skills": "Golang · JavaScript · Angular · Back-End Web Development · Git · Docker · Kubernetes · Python"
+      },
+      {
         "company": "Aakash EduTech Private Limited",
         "designation": "Software Engineer",
-        "location": "Remote Location",
-        "dates": "Jul, 2020 - Present. "+last_experiance,
+        "location": "Remote (India)",
+        "dates": "Jul, 2020 - Oct, 2022 · 2 yrs 5 mos",
         "description": "Working as a Software Engineer. Responsible to create the rest API using Goland and handling the backend.",
         "skills": "Go (Programming Language) · PHP · JavaScript · Beego · Back-End Web Development · PostgreSQL · Git · Linux"
       },
@@ -31,7 +39,7 @@
         "company": "Queppelin Technology Solutions Pvt. Ltd.",
         "designation": "Full-stack Developer",
         "location": "Gurgaon, India",
-        "dates": "Sep 2019 - Jul 2020· 11 mos",
+        "dates": "Sep 2019 - Jul 2020 · 11 mos",
         "description": "Working as Application Developer. Responsible for creating and managing backend web applications using Laravel (PHP) and PWA applications using angular 8.",
         "skills": "PHP · JavaScript · Back-End Web Development · Angular · Laravel · HTML5 · Amazon Web Services (AWS) · Git · Linux · Amazon EC2 · MySQL"
       },
@@ -44,7 +52,7 @@
         "skills": "PHP · JavaScript · Back-End Web Development · Angular · Laravel · HTML5 · CodeIgniter · Cascading Style Sheets (CSS) · Amazon Web Services (AWS) · Git · Linux · Amazon EC2 · MySQL"
       },
       {
-        "company": "Aviance Salesmart (Fabilic)",
+        "company": "Aviance Salesmart (Fabolic)",
         "designation": "Web Developer",
         "location": "Lucknow, Uttar Pradesh, India",
         "dates": "May 2017 - May 2018 · 1 yr 1 mo",
@@ -59,25 +67,31 @@
 
   App.controller("SkillsCtrl", ["$scope", function ($scope) {
     $scope.records = [
-      { "title" : "Golang", "rating" : 7 },
-      { "title" : "PHP", "rating" : 8 },
+      { "title" : "Golang", "rating" : 8 },
+      { "title" : "Angular", "rating" : 7 },
+      { "title" : "Docker", "rating" : 7 },
+      { "title" : "Kubernetes", "rating" : 6 },
+      { "title" : "Javascript", "rating" : 7 },
+      { "title" : "PHP", "rating" : 7 },
       { "title" : "Database (SQL)", "rating" : 8 },
       { "title" : "AWS", "rating" : 6 },
-      { "title" : "Docker", "rating" : 7 },
-      { "title" : "Javascript", "rating" : 7 },
       { "title" : "Laravel", "rating" : 6 },
-      { "title" : "Angular Js", "rating" : 8 },
-      { "title" : "Angular 2+", "rating" : 6 },
       { "title" : "Frontend (HTML + CSS)", "rating" : 6 },
       { "title" : "Backend", "rating" : 8 },
       { "title" : "Linux", "rating" : 8 },
-      { "title" : "Ruby On Rails", "rating" : 5 },
       { "title" : "Python", "rating" : 5 }
     ]  
   },]);
 
   App.controller("ProjectCtrl", ["$scope", function ($scope) {
     $scope.records = [
+      {
+        "title": "Website Pro",
+        "tech": "Golang, Angular, Kubernetes",
+        "description": "Platform to provide the worpress based hosting with more than 15k site hosted.",
+        "link": null,
+        "github": null
+      },
       {
         "title": "TLLMS",
         "tech": "Ruby On Rails. PostgreSQL. Activeadmin",
