@@ -39,7 +39,7 @@
         "company": "Queppelin Technology Solutions Pvt. Ltd.",
         "designation": "Full-stack Developer",
         "location": "Gurgaon, India",
-        "dates": "Sep 2019 - Jul 2020 · 11 mos",
+        "dates": "Sep 2019 - Jul 2020 · 1 yr",
         "description": "Working as Application Developer. Responsible for creating and managing backend web applications using Laravel (PHP) and PWA applications using angular 8.",
         "skills": "PHP · JavaScript · Back-End Web Development · Angular · Laravel · HTML5 · Amazon Web Services (AWS) · Git · Linux · Amazon EC2 · MySQL"
       },
@@ -199,13 +199,13 @@
       return message
     }
     var today = new Date()
-    var dob = new Date(1996,01,07)
+    var dob = new Date(1996,1,7)
 
     var age = $scope.calcDate(today,dob)
 
     $scope.record = {
       "name": "Harendra Kumar Kanojiya",
-      "heading": "Backend Developer (Golang + PHP)",
+      "heading": "Backend Developer (Golang)",
       "image" : "/assets/images/harendra.jpeg",
       "about_l1": "Hi I'm Harendra Kumar Kanojiya. Currently I am FSD (Full-stack developer) and I have expertise with Angular ,PHP, Node JS, Laravel, Codeigniter and front end. Done few live projects and portfolio work in above.",
       "about_l2": "Lover of innovation and everything related to generate new knowledge. Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.",
@@ -221,7 +221,5 @@
       "facebook": "https://www.facebook.com/harendraverma21/"
     }
   },]);
-
-
 
 })();
