@@ -1,17 +1,17 @@
 .profile-image{
     width: 300px;
     border-radius:50%;
-    transition: transform 0.5s ease;
+    transition: transform 1s ease;
 }
 .card:hover,.profile-image:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 .card {
-    transition: transform 0.5s ease;
-    box-shadow: 0 4px 6px 0 rgb(0 0 0);
-    border-radius: 0;
-    border: 0;
-  }
+    transition: transform 1s ease;
+    box-shadow: 4px 5px 8px 5px rgb(107 106 106);
+    border-radius: 15px;
+    border: 0px;
+}
 h1,h2,h3,h4,h5,h6{
     color: #E57373;
 }
