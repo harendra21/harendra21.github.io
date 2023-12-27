@@ -8,7 +8,7 @@
             <div class="card bg-dark">
                 <div class="card-body">
                     <h4>{{ record.title }}</h4>
-                    <p><b>Self Rating:</b> <span ng-repeat="x in [].constructor(record.rating) track by $index">★</span><span ng-repeat="x in [].constructor(10 - record.rating) track by $index">☆</span> ({{ record.rating }}/10)</p>
+                    <p><b>Self Rating:</b> <span class="rating" ng-repeat="x in [].constructor(record.rating) track by $index">★</span><span ng-repeat="x in [].constructor(10 - record.rating) track by $index">☆</span> ({{ record.rating }}/10)</p>
                 </div>
             </div>
             <br>
