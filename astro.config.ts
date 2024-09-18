@@ -14,5 +14,5 @@ export default defineConfig({
       applyBaseStyles: false,
     })
   ],
-  base: 'https://github.com/harendra21/harendra21.github.io/',
+  base: '',
 })
