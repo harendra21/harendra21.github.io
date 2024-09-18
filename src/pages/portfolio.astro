@@ -6,22 +6,22 @@ import BottomLayout from '../layouts/BottomLayout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS } from '../lib/constants'
 
-import { contentfulClient } from '../lib/contentful'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import type { EntryFieldTypes } from 'contentful'
+// import { contentfulClient } from '../lib/contentful'
+// import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+// import type { EntryFieldTypes } from 'contentful'
 
-interface Project {
-  contentTypeId: 'Projects'
-  fields: {
-    name: EntryFieldTypes.Text
-    img: EntryFieldTypes.AssetLink
-    website: EntryFieldTypes.EntryResourceLink<any>
-    repositorio: EntryFieldTypes.EntryResourceLink<any>
-  }
-}
+// interface Project {
+//   contentTypeId: 'Projects'
+//   fields: {
+//     name: EntryFieldTypes.Text
+//     img: EntryFieldTypes.AssetLink
+//     website: EntryFieldTypes.EntryResourceLink<any>
+//     repositorio: EntryFieldTypes.EntryResourceLink<any>
+//   }
+// }
 
-const entries = await contentfulClient.getEntries<Project>({})
-console.log(entries)
+// const entries = await contentfulClient.getEntries<Project>({})
+// console.log(entries)
 ---
 
 <BaseLayout title="Portfolio" description="Projects done">
