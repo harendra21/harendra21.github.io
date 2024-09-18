@@ -19,7 +19,7 @@ import { EXPERIENCE } from '../lib/constants'
     <BottomLayout>
       <ul>
         {
-          EXPERIENCE.map((entry) => (
+          EXPERIENCE.map((entry: any) => (
             <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
               <div class="mb-4 text-sm uppercase">
                 {entry.start} - {entry.end}

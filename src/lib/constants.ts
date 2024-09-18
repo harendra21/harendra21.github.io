@@ -138,14 +138,45 @@ export const PROFESSIONAL_PROJECTS = [
     image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.07.52_PM_gpejk9.png"
   },
   {
+    name: "Mind Master Zambia",
+    description: "This was also a online game based on KBC which was running on android in Zambia country.",
+    link: "",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Egp1H-KVkAAI9y8_kcq0f5.jpg"
+  },
+  {
+    name: "Gully Cricket",
+    description: "This is a fantsy game like dream 11, where you can create your ticket to play and win the cash price",
+    link: "",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/first-block.png_ednioc.png"
+  },
+  {
+    name: "Symposium Go",
+    description: "This web application is used to provide the online and recorded webinars to the US doctors.",
+    link: "https://www.symposiumgo.com/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_7.03.12_PM_yrbqmi.png"
+  },
+  {
     name: "Online Audio Training (OAT)",
     description: "This web application is used to conduct online webinars for doctors over goto meeting.",
     link: "https://www.onlinevodcasttraining.com/",
     image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.16.45_PM_aj7o0i.png"
-  }
+  },
+  {
+    name: "Aviance Sales Mart (Fabolic)",
+    description: "This was a multivendor ecommerce application with full-featured ecommerc functions like delivery and payment integration.",
+    link: "https://www.fabolic.com/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/fabolic_cover_z3xfr1.jpg"
+  },
+
 ]
 
 export const PERSONAL_PROJECTS = [
+  {
+    name: "Open Source Alternatives",
+    description: "An app to find open source alternatives for popular paid SaaS products.",
+    link: "https://osa.withcodeexample.com/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_6.49.13_PM_kwucxx.png"
+  },
   {
     name: "Blogging Platform",
     description: "A open-source platform to manage social media accounts (Facebook, twitter, instagram, pintrest and linkedin",
