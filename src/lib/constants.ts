@@ -7,20 +7,21 @@ export const loaderAnimation = [
 ]
 
 export const LINKS = {
-  github: 'https://github.com/bue221',
-  linkedin: 'https://www.linkedin.com/in/bue221/',
-  mail: 'mailto:camiloplaza3@gmail.com',
-  instagram: 'https://www.instagram.com/caj_ink/',
-  medium: 'https://ladvace.medium.com/',
-  discord: 'https://discordapp.com/users/163300027618295808',
+  github: 'https://github.com/harendra21',
+  linkedin: 'https://www.linkedin.com/in/harendra21/',
+  mail: 'mailto:harendraverma21@gmail.com',
+  email: 'harendraverma21@gmail.com',
+  twitter: 'https://twitter.com/harendraverma2',
+  medium: 'https://medium.com/@harendra21',
+  // discord: 'https://discordapp.com/users/harendra3788',
 }
 
 // Global
 export const SITE: Site = {
-  TITLE: 'Astro Sphere',
+  TITLE: '🇮🇳 Harendra Kumar Kanojiya - Portfolio Site',
   DESCRIPTION:
-    'Welcome to Astro Sphere, a portfolio and blog for designers and developers.',
-  AUTHOR: 'Mark Horn',
+    'Hi, I’m Harendra Kumar, a full-stack frontend  developer specializing in backend development and system design.',
+  AUTHOR: 'Harendra Kumar Kanojiya',
 }
 
 // Work Page
@@ -31,7 +32,7 @@ export const WORK: Page = {
 
 // Blog Page
 export const BLOG: Page = {
-  TITLE: 'Blog',
+  TITLE: 'Blogs',
   DESCRIPTION: 'Writing on topics I am passionate about.',
 }
 
@@ -47,114 +48,127 @@ export const SEARCH: Page = {
   DESCRIPTION: 'Search all posts and projects by keyword.',
 }
 
+
 // Study Page
 export const STUDIES = [
   {
     title: 'Computer Science',
-    institution: 'Universidad Central',
-    link: 'https://www.ucentral.edu.co/',
-    date: '2019 - 2027',
+    institution: 'S.R.M.S College of Engineering and Technology',
+    link: 'https://www.srms.ac.in/engineering/',
+    date: '2013 - 2017',
   },
   {
-    title: '...',
-    institution: 'Platzi',
-    link: 'https://platzi.com/',
-    date: '2018 - 2022',
+    title: 'Intermediate',
+    institution: 'Shraswati Vidhya Mandir',
+    link: 'http://www.svmicgola.com/',
+    date: '2010 - 2012',
   },
   {
-    title: '...',
-    institution: 'Udemy',
-    link: 'https://www.udemy.com/',
-    date: '2018 - 2022',
-  },
-  {
-    title: '...',
-    institution: 'Youtube',
-    link: 'https://www.youtube.com/@midulive',
-    date: '2018 - 2022',
-  },
-  {
-    title: 'Tattoo Artist',
-    institution: 'Tattoo Academy',
-    link: 'https://www.instagram.com/tattoodcacademy/',
-    date: '2024 - 2025',
+    title: 'High School',
+    institution: 'Shraswati Vidhya Mandir',
+    link: 'http://www.svmicgola.com/',
+    date: '2009 - 2010',
   },
 ]
 
 export const EXPERIENCE = [
   {
-    company: 'Straico',
-    location: 'Bogotá D C, Colombia',
-    position: 'Software Engineer',
-    start: '2021',
-    link: 'https://straico.com/',
+    company: 'Vendasta',
+    location: 'Saskatoon, Canada (Remote)',
+    position: 'Software Development Engineer 3 (SDE 3)',
+    start: 'Oct, 2022',
+    link: 'https://www.vendasta.com/',
     end: 'Current',
-    tasks: [
-      'Integration IA services with react and tailwind css',
-      'Development and build of DB with mongoDB',
-    ],
+    skills: 'Golang · JavaScript · Angular · Back-End Web Development · Git · Docker · Kubernetes · Python',
   },
   {
-    company: 'Spot2',
+    company: 'Aakash Edu. Tech (Byjus)',
     location: 'Mexico City, Mexico',
     position: 'Software Engineer',
-    link: 'https://spot2.mx/',
-    start: '2021',
-    end: 'Current',
-    tasks: [
-      'Development of the Spot2 platform with the use of React, Redux, and Material UI',
-      'Development map with the use of Google Maps API',
-      'Development internal platform with the use of React, Redux, and Material UI',
-      'Testing and debugging',
-    ],
+    link: 'https://aakashdigital.com/',
+    start: 'July, 2020',
+    end: 'Oct, 2022',
+    skills: 'Golang · PHP · JavaScript · Beego · Back-End Web Development · PostgreSQL · Git · Linux'
   },
   {
-    company: 'Imaginamos',
-    link: 'https://imaginamos.com/',
+    company: 'Quippelin',
+    link: 'https://www.queppelin.com/',
     location: 'Bogotá D C, Colombia',
     position: 'Frontend developer',
-    start: '2021',
-    end: '2021',
-    tasks: [
-      'Development of the Imaginamos platform with the use of React, Redux, and Material UI',
-      'Work in ETB project with the use of React, Redux, and Material UI',
-    ],
+    start: 'Aug, 2019',
+    end: 'July, 2020',
+    skills: 'PHP · JavaScript · Back-End Web Development · Angular · Laravel · HTML5 · Amazon Web Services (AWS) · Git · Linux · Amazon EC2 · MySQL',
   },
   {
-    company: 'INETUM',
+    company: 'Aabhyasa',
     location: 'Bogotá D C, Colombia',
     position: 'Frontend developer',
-    start: '2021',
-    link: 'https://www.inetum.com/es',
-    end: '2021',
-    tasks: [
-      'Support in the QA area and bug review',
-      'Use of SCRUM methodology',
-      'Claro projects with the use of frameworks and libraries such as react and angular',
-      'Use of redux toolkit as aproposal which allowed a shorter development time when using this tool',
-    ],
+    start: 'May, 2018',
+    link: 'https://aabhyasa.com/',
+    end: 'Aug, 2019',
+    skills: 'PHP · JavaScript · Back-End Web Development · Angular · Laravel · HTML5 · CodeIgniter · Cascading Style Sheets (CSS) · Amazon Web Services (AWS) · Git · Linux · Amazon EC2 · MySQL',
   },
   {
-    company: 'S I G',
+    company: 'Aviance Sales Mart',
     location: 'Bogotá D C, Colombia',
     position: 'Software developer',
-    start: '2021',
-    end: '2021',
-    tasks: [
-      'Development of a dashboard with react admin and chartjs for managing and entering information',
-    ],
-  },
-  {
-    company: 'BOOKII',
-    location: 'Bogotá D C, Colombia',
-    position: 'Software developer',
-    start: '2019',
-    end: '2021',
-    tasks: [
-      'Productive collaborationwiththebackendteamforthecreationofthe conversationalclubs',
-      'Effective coding of conversational clubs following design guide lines and using the Redux statemanager',
-      'Creation of the Bookii page in Spanish and change of texts in cms',
-      'Generation of static posts using Gatsby and the Contentful cms for the Bookii blog',
-    ],
-  },
+    start: 'May, 2017',
+    end: 'May, 2018',
+    skills: 'PHP · JavaScript · Back-End Web Development · HTML5 · CodeIgniter · Cascading Style Sheets (CSS) · MySQL',
+  }
 ]
+
+export const PROFESSIONAL_PROJECTS = [
+  {
+    name: "Website Pro",
+    description: "Platform to provide the worpress based hosting with more than 18k site hosted.",
+    link: "https://www.vendasta.com/websites/website-pro/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/WebsiteDevTools_kqlqaz.png"
+  },
+  {
+    name: "Aakash Digital",
+    description: "Aakash Digital is online teaching platform, I have worked on their live class platform.",
+    link: "https://aakashdigital.com/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_3.16.35_PM_niyuhf.png"
+  },
+  {
+    name: "QOTD (Quiz Of The Day)",
+    description: "An android application to conduct the daily tests and measure the efficency of student based on diffrent aspects to create report.",
+    link: "https://play.google.com/store/apps/details?id=com.byjus.aakash.thelearningapp&hl=en_IN",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.07.52_PM_gpejk9.png"
+  },
+  {
+    name: "Online Audio Training (OAT)",
+    description: "This web application is used to conduct online webinars for doctors over goto meeting.",
+    link: "https://www.onlinevodcasttraining.com/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.16.45_PM_aj7o0i.png"
+  }
+]
+
+export const PERSONAL_PROJECTS = [
+  {
+    name: "Blogging Platform",
+    description: "A open-source platform to manage social media accounts (Facebook, twitter, instagram, pintrest and linkedin",
+    link: "https://content-clock.web.app/",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.39.18_PM_jz4vo2.png"
+  },
+  {
+    name: "Blogging Platform",
+    description: "With Code Example plogging platform",
+    link: "https://withcodeexample.com",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Screenshot_2024-09-18_at_4.30.47_PM_qt1du0.png"
+  },
+  {
+    name: "Php real time private chat",
+    description: "This project is build with PHP websockets for realtime chat. 20 Stars on github",
+    link: "https://github.com/harendra21/Realtime-One-To-One-Chat",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/Php_real_time_private_chat_kjbiff.png"
+  },
+  {
+    name: "Laravel Migration Builder",
+    description: "A project to generate Laravel Migration",
+    link: "https://github.com/harendra21/laravel-migration-builder",
+    image: "https://res.cloudinary.com/harendra21/image/upload/w_500/png_zlvdkj.png"
+  }
+]
+

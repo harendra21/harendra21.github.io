@@ -26,16 +26,22 @@ import { EXPERIENCE } from '../lib/constants'
               </div>
               <a
                 href={entry.link ?? ''}
+                target="_blank"
                 class={`font-semibold ${entry?.link ? 'text-primary' : 'text-foreground'}`}
               >
                 {entry.company}
               </a>
               <div class="text-sm font-semibold">{entry.position}</div>
               <article class="prose dark:prose-invert">
-                {entry.tasks.map((i) => (
-                  <>{i}</>
-                ))}
+                <b>Skills:</b> {entry.skills}
               </article>
+              {entry?.tasks && entry?.tasks.length > 1 && (
+                <article class="prose dark:prose-invert">
+                  {entry?.tasks.map((i) => (
+                    <>{i}</>
+                  ))}
+                </article>
+              )}
             </li>
           ))
         }

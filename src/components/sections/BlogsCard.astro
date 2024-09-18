@@ -1,0 +1,27 @@
+---
+import Card from '../Card.astro'
+import { Button } from '../ui/button'
+
+const blogUrl =
+  'https://www.toptal.com/developers/feed2json/convert?url=https://medium.com/@harendra21/feed'
+
+const response = await fetch(blogUrl)
+const blogs = await response.json()
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2" title="Blogs">
+  <div class="mt-2 space-y-4">
+    {
+      blogs.items.slice(0, 5).map((blog) => (
+        <div>
+          <a class="text-primary" href={blog?.url ?? ''}>
+            <h3 class="text-md font-semibold">{blog.title}</h3>
+          </a>
+        </div>
+      ))
+    }
+    <a href="/blogs">
+      <Button variant="link" className="pl-0"> View More </Button>
+    </a>
+  </div>
+</Card>

@@ -1,0 +1,51 @@
+---
+import { BLOG, LINKS } from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+
+const blogUrl =
+  'https://www.toptal.com/developers/feed2json/convert?url=https://medium.com/@harendra21/feed'
+
+const response = await fetch(blogUrl)
+const blogs = await response.json()
+---
+
+<BaseLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <h2
+        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        {BLOG.TITLE}
+      </h2>
+    </TopLayout>
+    <BottomLayout>
+      <ul>
+        {
+          blogs.items.map((blog: any) => (
+            <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
+              <h2 class="text-2xl">
+                <a
+                  href={blog?.url ?? ''}
+                  target="_blank"
+                  class={`font-semibold ${blog?.url ? 'text-primary' : 'text-foreground'}`}
+                >
+                  {blog.title}
+                </a>
+              </h2>
+              <p class="mt-5 text-sm font-semibold">{blog.date_published}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="text-center">
+        Read more on <a
+          href={LINKS.medium}
+          target="_blank"
+          class="text-bold text-primary">Medium</a
+        >
+      </div>
+    </BottomLayout>
+  </main>
+</BaseLayout>

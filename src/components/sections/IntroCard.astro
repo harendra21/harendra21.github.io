@@ -2,7 +2,7 @@
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import { LINKS } from '../../lib/constants'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Linkedin, Github, Mail, Twitter } from 'lucide-react'
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
@@ -11,14 +11,21 @@ import { Linkedin, Github, Mail } from 'lucide-react'
       <div class="flex h-full flex-col">
         <h6 class="m-0 text-sm font-light text-gray-500">welcome</h6>
         <p class="m-0 text-xl font-light">
-          Hi, I'm <b class="font-bold">Andrés Camilo Plaza</b>, a software
-          developer, systems engineer and tattoo artist with strong focus on the
-          user experience, animations and micro interactions. I love to create
-          beautiful and functional interfaces, I am passionate about technology
-          and I am always looking for new challenges.
+          Hi, I’m <b class="font-bold">Harendra Kumar 🇮🇳</b>, a full-stack
+          frontend developer specializing in backend development and system
+          design. My expertise spans both areas, allowing me to create
+          efficient, scalable, and robust solutions for various projects. I’m
+          passionate about building seamless user experiences with
+          well-architected systems.
         </p>
       </div>
       <div class="flex gap-4">
+        <a href={LINKS.twitter} aria-label="twitter profile" target="_blank">
+          <Button aria-label="twitter profile">
+            <Twitter />
+            <span class="sr-only">Twitter</span>
+          </Button>
+        </a>
         <a href={LINKS.github} aria-label="github profile" target="_blank">
           <Button aria-label="github profile">
             <Github />
@@ -42,8 +49,8 @@ import { Linkedin, Github, Mail } from 'lucide-react'
     <img
       width="300"
       height="300"
-      src="/me.png"
-      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[300px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
+      src="https://res.cloudinary.com/harendra21/image/upload/w_300/harendra_vt8mzi.jpg"
+      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[300px] w-auto select-none rounded-sm opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
       alt="memoji of andres plaza"
     />
   </div>

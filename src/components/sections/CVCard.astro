@@ -1,9 +1,9 @@
 ---
-import { File } from 'lucide-react'
+import { Download } from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 
-const PDF = '/CV English.pdf'
+const PDF = '/Harendra Kumar - 7.0 Years Exp.pdf'
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4" title="CV">
@@ -21,8 +21,8 @@ const PDF = '/CV English.pdf'
         <div class="card-actions mt-2 flex w-full items-center justify-center">
           <a target="_blank" href={PDF}>
             <Button>
-              Download resume
-              <File />
+              Download Resume &nbsp;
+              <Download />
             </Button>
           </a>
         </div>

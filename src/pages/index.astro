@@ -8,9 +8,12 @@ import ContactsCard from '../components/sections/ContactsCard.astro'
 import Now from '../components/sections/Now.astro'
 import CVCard from '../components/sections/CVCard.astro'
 import ExperienceCard from '../components/sections/ExperienceCard.astro'
-import TattooCard from '../components/sections/TattooCard.astro'
+import BlogsCard from '../components/sections/BlogsCard.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
+import PortfolioCard from '../components/sections/PortfolioCard.astro'
+import QuoteCard from '../components/sections/QuoteCard.astro'
 //
+
 import { motion, AnimatePresence } from 'framer-motion'
 ---
 
@@ -38,8 +41,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 </script>
 
 <BaseLayout
-  title="Andrés Plaza - Full Stack Developer"
-  description="Andrés Plaza - Full Stack Developer - Portfolio, Projects, CV, About Me, Contact, Timezone, Now, Experience, Tattoo, Study"
+  title="🇮🇳 Harendra Kumar Kanojiya - Full Stack Developer"
+  description="Harendra Kumar Kanojiya - Full Stack Developer - Portfolio, Projects, CV, About Me, Contact, Timezone, Now, Experience, Study"
 >
   <div
     slot="loader"
@@ -53,33 +56,12 @@ import { motion, AnimatePresence } from 'framer-motion'
     <AboutMe />
     <CVCard />
     <Now />
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
-      title="Portfolio & Projects"
-      href="/portfolio"
-    />
     <TimeZoneCard />
     <ContactsCard />
     <ExperienceCard />
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <div class="flex h-full flex-col justify-between">
-        <blockquote class="mt-6 border-l-2 pl-6 italic">
-          “Anything one man can imagine, other men can make real.”
-        </blockquote>
-        <p class="mt-2 text-xs">- Jules Verne</p>
-      </div>
-    </Card>
-    <TattooCard />
     <StudyCard />
-    <!-- <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <p class="text-xs">
-        © 2023 · Crafted with ♥️ using <a
-          href="https://astro.build/"
-          target="_blank"
-          class="text-red-500">Astro</a
-        > by Gianmarco.
-      </p>
-    </Card> -->
+    <PortfolioCard />
+    <QuoteCard />
+    <BlogsCard />
   </main>
 </BaseLayout>
