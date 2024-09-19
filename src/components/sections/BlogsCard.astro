@@ -9,7 +9,7 @@ const response = await fetch(blogUrl)
 const blogs = await response.json()
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2" title="Blogs">
+<Card colSpan="md:col-span-2" rowSpan="md:row-span-2" title="Blogs">
   <div class="mt-2 space-y-4">
     {
       blogs.items.slice(0, 5).map((blog) => (

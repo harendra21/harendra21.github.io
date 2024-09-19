@@ -48,24 +48,30 @@ export const SEARCH: Page = {
   DESCRIPTION: 'Search all posts and projects by keyword.',
 }
 
+// Search Page
+export const STUDY: Page = {
+  TITLE: 'Study',
+  DESCRIPTION: 'Search all posts and projects by keyword.',
+}
+
 
 // Study Page
 export const STUDIES = [
   {
-    title: 'Computer Science',
-    institution: 'S.R.M.S College of Engineering and Technology',
+    title: 'B. Tech in Computer Science',
+    institution: 'S.R.M.S College of Engineering and Technology, Unnao',
     link: 'https://www.srms.ac.in/engineering/',
     date: '2013 - 2017',
   },
   {
     title: 'Intermediate',
-    institution: 'Shraswati Vidhya Mandir',
+    institution: 'Shraswati Vidhya Mandir, Gola Gokaran Nath',
     link: 'http://www.svmicgola.com/',
     date: '2010 - 2012',
   },
   {
     title: 'High School',
-    institution: 'Shraswati Vidhya Mandir',
+    institution: 'Shraswati Vidhya Mandir, Gola Gokaran Nath',
     link: 'http://www.svmicgola.com/',
     date: '2009 - 2010',
   },

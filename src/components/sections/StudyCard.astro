@@ -2,6 +2,7 @@
 import Card from '../Card.astro'
 import { Badge } from '../ui/badge'
 import { STUDIES } from '../../lib/constants'
+import { Button } from '../ui/button'
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-1" title="Study">
@@ -13,5 +14,8 @@ import { STUDIES } from '../../lib/constants'
         </a>
       ))
     }
+    <a href="/study">
+      <Button variant="link" className="pl-0"> View More </Button>
+    </a>
   </div>
 </Card>

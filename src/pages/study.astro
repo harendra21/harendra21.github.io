@@ -1,0 +1,39 @@
+---
+import { STUDY } from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+
+import { STUDIES } from '../lib/constants'
+---
+
+<BaseLayout title={STUDY.TITLE} description={STUDY.DESCRIPTION}>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <h2
+        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        {STUDY.TITLE}
+      </h2>
+    </TopLayout>
+    <BottomLayout>
+      <ul>
+        {
+          STUDIES.map((study: any) => (
+            <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
+              <h2 class="text-2xl font-semibold">{study.title}</h2>
+              <a
+                href={study.link ?? ''}
+                target="_blank"
+                class={`font-semibold ${study?.link ? 'text-primary' : 'text-foreground'}`}
+              >
+                {study.institution}
+              </a>
+              <h2 class="text-sm font-semibold text-gray-500">{study.date}</h2>
+            </li>
+          ))
+        }
+      </ul>
+    </BottomLayout>
+  </main>
+</BaseLayout>

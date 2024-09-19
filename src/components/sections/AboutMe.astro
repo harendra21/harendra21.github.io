@@ -1,6 +1,14 @@
 ---
 import Card from '../Card.astro'
 import { LINKS } from '../../lib/constants'
+
+const techIcon = (iconPath, name) => {
+  return `<img
+          src="${iconPath}"
+          class="float-start w-5 mr-2"
+          alt="angular icon"
+        /> ${name}`
+}
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
@@ -11,20 +19,80 @@ import { LINKS } from '../../lib/constants'
       <br />
       <br />
       My primary tools of choice includes:
-      <ul class="list-inside list-disc">
-        <li>Golang</li>
-        <li>Angular</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>SQL+PgSQL</li>
-        <li>HTML + CSS</li>
-        <li>AWS + GCP</li>
-      </ul>
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722155/tech/Go_phvp5z.svg',
+          'Golang',
+        )}
+      />
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722333/tech/Angular_oivyvk.svg',
+          'Angular',
+        )}
+      />
+
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722595/tech/JavaScript_vx2oia.svg',
+          'JavaScript',
+        )}
+      />
+
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722601/tech/TypeScript_eqmkfl.svg',
+          'TypeScript',
+        )}
+      />
+
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722634/tech/Docker_kxy2rh.svg',
+          'Docker',
+        )}
+      />
+
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722667/tech/Kubernetes_psx83i.svg',
+          'Kubernetes',
+        )}
+      />
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722711/tech/PostgresSQL_udhpz1.svg',
+          'SQL+PgSQL',
+        )}
+      />
+
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722754/tech/HTML5_a3bbpa.svg',
+          'HTML',
+        )}
+      />
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722761/tech/CSS3_jz9s1f.svg',
+          'CSS',
+        )}
+      />
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/w_48/tech/AWS_zioqpz.png',
+          'AWS',
+        )}
+      />
+      <div
+        set:html={techIcon(
+          'https://res.cloudinary.com/harendra21/image/upload/v1726722858/tech/Google-Cloud_bof4vr.svg',
+          'GCP',
+        )}
+      />
     </p>
     <p class="text-sm font-light">
-      Beyond coding, I'm passionate about technical writing, you can red my
+      Beyond coding, I'm passionate about technical writing, you can read my
       blogs on <a class="text-primary" target="_blank" href={LINKS.medium}
         >medium</a
       >.
