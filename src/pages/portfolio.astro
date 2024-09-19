@@ -4,7 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS } from '../lib/constants'
+import {
+  PROFESSIONAL_PROJECTS,
+  PERSONAL_PROJECTS,
+  PROJECTS,
+} from '../lib/constants'
 
 // import { contentfulClient } from '../lib/contentful'
 // import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
@@ -24,13 +28,13 @@ import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS } from '../lib/constants'
 // console.log(entries)
 ---
 
-<BaseLayout title="Portfolio" description="Projects done">
+<BaseLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="slide">
     <TopLayout>
       <h2
         class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
       >
-        Projects worked on
+        {PROJECTS.TITLE}
       </h2>
     </TopLayout>
     <BottomLayout>

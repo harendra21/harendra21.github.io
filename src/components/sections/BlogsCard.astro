@@ -15,7 +15,7 @@ const blogs = await response.json()
       blogs.items.slice(0, 5).map((blog) => (
         <div>
           <a class="text-primary" href={blog?.url ?? ''}>
-            <h3 class="text-md font-semibold">{blog.title}</h3>
+            <h3 class="text-md">{blog.title}</h3>
           </a>
         </div>
       ))

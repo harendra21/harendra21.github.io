@@ -26,20 +26,20 @@ export const SITE: Site = {
 
 // Work Page
 export const WORK: Page = {
-  TITLE: 'Work',
-  DESCRIPTION: 'Places I have worked.',
+  TITLE: 'Harendra Kumar Kanojiya - Work Expriance',
+  DESCRIPTION: 'Currently working with Vendasta, previously worked in - Aakash Edu. Tech (Byjus), Quippelin, Aabhyasa and Aviance Sales Mart.',
 }
 
 // Blog Page
 export const BLOG: Page = {
-  TITLE: 'Blogs',
-  DESCRIPTION: 'Writing on topics I am passionate about.',
+  TITLE: 'Harendra Kumar Kanojiya - Blogs',
+  DESCRIPTION: 'I am passionate to write technical blogs on medium.com',
 }
 
 // Projects Page
 export const PROJECTS: Page = {
-  TITLE: 'Projects',
-  DESCRIPTION: 'Recent projects I have worked on.',
+  TITLE: 'Harendra Kumar Kanojiya - Projects',
+  DESCRIPTION: 'A list of all projects done by me professional and personal',
 }
 
 // Search Page
@@ -50,8 +50,8 @@ export const SEARCH: Page = {
 
 // Search Page
 export const STUDY: Page = {
-  TITLE: 'Study',
-  DESCRIPTION: 'Search all posts and projects by keyword.',
+  TITLE: 'Harendra Kumar Kanojiya - Study',
+  DESCRIPTION: 'All about my studies - B.tech, Intermediate and High School',
 }
 
 
