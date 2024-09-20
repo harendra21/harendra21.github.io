@@ -4,11 +4,33 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
 
-const blogUrl =
-  'https://www.toptal.com/developers/feed2json/convert?url=https://medium.com/@harendra21/feed'
+import BlogCard from '../components/BlogCard.astro'
 
-const response = await fetch(blogUrl)
-const blogs = await response.json()
+import { contentfulClient } from '../lib/contentful'
+import type { EntryFieldTypes } from 'contentful'
+type Blog = {
+  contentTypeId: 'blog'
+  fields: {
+    title: EntryFieldTypes.Text
+    images: EntryFieldTypes.AssetLink
+    url: EntryFieldTypes.EntryResourceLink<any>
+    summary: EntryFieldTypes.RichText
+    date: EntryFieldTypes.Date
+    published: EntryFieldTypes.Boolean
+  }
+}
+
+const entries = await contentfulClient.getEntries<Blog>({
+  limit: 50,
+  order: ['sys.createdAt'],
+  content_type: 'blog',
+})
+const blogsData = entries.items
+const blogs = blogsData.sort((a, b) => {
+  const dateA: any = new Date(a.fields.date)
+  const dateB: any = new Date(b.fields.date)
+  return dateB - dateA
+})
 ---
 
 <BaseLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
@@ -21,30 +43,18 @@ const blogs = await response.json()
       </h2>
     </TopLayout>
     <BottomLayout>
-      <ul>
+      <div class="flex w-full flex-wrap justify-center gap-2">
         {
-          blogs.items.map((blog: any) => (
-            <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
-              <h2 class="text-2xl">
-                <a
-                  href={blog?.url ?? ''}
-                  target="_blank"
-                  class={`font-semibold ${blog?.url ? 'text-primary' : 'text-foreground'}`}
-                >
-                  {blog.title}
-                </a>
-              </h2>
-              <p class="mt-5 text-sm font-semibold">{blog.date_published}</p>
-            </li>
+          blogs.map((blog: any) => (
+            <BlogCard
+              href={blog?.fields.url}
+              heading={blog?.fields?.title}
+              description={blog?.fields?.summary}
+              imagePath={blog?.fields?.image}
+              class="w-full sm:w-2/5"
+            />
           ))
         }
-      </ul>
-      <div class="text-center">
-        Read more on <a
-          href={LINKS.medium}
-          target="_blank"
-          class="text-bold text-primary">Medium</a
-        >
       </div>
     </BottomLayout>
   </main>

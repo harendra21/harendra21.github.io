@@ -2,20 +2,26 @@
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 
-const blogUrl =
-  'https://www.toptal.com/developers/feed2json/convert?url=https://medium.com/@harendra21/feed'
+import { contentfulClient } from '../../lib/contentful'
+const entries = await contentfulClient.getEntries({
+  limit: 50,
+})
 
-const response = await fetch(blogUrl)
-const blogs = await response.json()
+const blogsData = entries.items
+const blogs = blogsData.sort((a, b) => {
+  const dateA: any = new Date(a.fields.date)
+  const dateB: any = new Date(b.fields.date)
+  return dateB - dateA
+})
 ---
 
 <Card colSpan="md:col-span-2" rowSpan="md:row-span-2" title="Blogs">
   <div class="mt-2 space-y-4">
     {
-      blogs.items.slice(0, 5).map((blog) => (
+      blogs.slice(0, 5).map((blog) => (
         <div>
-          <a class="text-primary" href={blog?.url ?? ''}>
-            <h3 class="text-md">{blog.title}</h3>
+          <a class="text-primary" href={blog?.fields?.url ?? ''}>
+            <h3 class="text-md">{blog?.fields?.title}</h3>
           </a>
         </div>
       ))
