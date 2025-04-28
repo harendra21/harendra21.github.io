@@ -2,7 +2,7 @@ import type { Experience } from "../types";
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Vendasta",
+    company: "Vendasta Technology (India) Private Limited - 2 Years, 6 Months",
     positions: [
       {
         title: "Software Developer - III",
@@ -43,7 +43,7 @@ export const EXPERIENCES: Experience[] = [
   },
 
   {
-    company: "Aakash EduTech Private Limited (Byjus)",
+    company: "Aakash EduTech Private Limited (Byjus) - 2 Years, 5 Months",
     positions: [
       {
         title: "Software Engineer",
@@ -68,7 +68,7 @@ export const EXPERIENCES: Experience[] = [
   },
 
   {
-    company: "Queppelin",
+    company: "Queppelin - A Metaverse Development Company - 1 Year, 1 Month",
     positions: [
       {
         title: "Full-Stack Developer",
@@ -94,7 +94,7 @@ export const EXPERIENCES: Experience[] = [
   },
 
   {
-    company: "Aabhyasa Technologies Pvt Ltd",
+    company: "Aabhyasa Technologies Pvt Ltd - 1 Year, 3 Months",
     positions: [
       {
         title: "Web Developer",
@@ -119,7 +119,7 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    company: "Aviance Sales Mart Pvt. Ltd.",
+    company: "Aviance Sales Mart Pvt. Ltd. - 1 Year, 1 Month",
     positions: [
       {
         title: "Web Developer",
