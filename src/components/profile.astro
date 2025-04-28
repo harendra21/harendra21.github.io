@@ -74,7 +74,7 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
       <XIcon className="size-4" />
       Follow me on
       <a
-        href={SOCIAL_LINKS[0].url}
+        href={SOCIAL_LINKS[2].url}
         target="_blank"
         class="underline underline-offset-4"
       >
@@ -98,7 +98,7 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
       <GithubIcon className="size-4" />
       Check out my repos on
       <a
-        href={SOCIAL_LINKS[2].url}
+        href={SOCIAL_LINKS[0].url}
         class="underline underline-offset-4"
         target="_blank"
       >
@@ -107,7 +107,13 @@ import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
     </span>
     <span class="flex items-center justify-start gap-2">
       <Phone className="size-4" />
-      Call me on {PROFILE_INFO.phone}
+      Call me on <a
+      href=`tel:${SOCIAL_LINKS[0].url}`
+      class="underline underline-offset-4"
+      target="_blank"
+    >
+    {PROFILE_INFO.phone}
+    </a>
     </span>
   </BoxContent>
 </Box>

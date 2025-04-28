@@ -47,7 +47,7 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         title: "Software Engineer",
-        year: "Jul, 2023 - Oct, 2024",
+        year: "Jul, 2020 - Oct, 2022",
         description: `
 - ♦ Developed **full-stack applications** using **Golang, Angular, and Node.js**.
 - ♦ Designed and implemented **RESTful APIs** using **Golang**.
@@ -144,7 +144,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Education",
     positions: [
       {
-        title: "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
+        title: "Bachelor of Technology (B.Tech) in Computer Science and Engineering,",
         year: "Aug 2013 - May 2017",
         description: `
 - ♦ Built a strong foundation in **software engineering**, focusing on **web development**.

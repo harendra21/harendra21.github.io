@@ -6,7 +6,7 @@ export const PROFILE_INFO = {
   avatar: "Harendra Kumar Kanojiya",
   email: "harendraverma21@gmail.com",
   resumeLink: "https://bit.ly/harendra-resume",
-  phone: "+91-9559058446",
+  phone: "+919559058446",
   about: `Hi, I'm a **Full-Stack Developer** with expertise in **Golang**, **Javascript**, **Angular**, and **Front-end** technologies. Over the years, I've successfully delivered live projects and portfolio work in these domains.`,
 
 } as const;
