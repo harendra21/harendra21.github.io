@@ -5,5 +5,5 @@ export const SITE = {
   desc: "My digital space, projects, insights, and thoughts on software engineering.",
   title: "Harendra Kumar Kanojiya",
   ogImage: '/og-image.jpg',
-  postPerPage: 6,
+  postPerPage: 10,
 } as const;
