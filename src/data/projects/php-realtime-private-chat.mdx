@@ -1,0 +1,107 @@
+---
+name: PHP Realtime Private Chat
+type: side
+image: https://res.cloudinary.com/harendra21/image/upload/w_800/Php_real_time_private_chat_kjbiff.png
+sourceCode: "https://github.com/harendra21/Realtime-One-To-One-Chat"
+preview: ""
+technologies:
+  - PHP
+  - Websockets
+  - HTML
+  - CSS
+  - JavaScript
+  - MySQL
+description: This project is build with PHP websockets for realtime chat. 20 Stars on github
+sortOrder: 3
+---
+
+# PHP Realtime Private Chat
+
+**Realtime-One-To-One-Chat** is an open-source project, designed to facilitate real-time, private one-to-one chat functionality using PHP and WebSockets. The application leverages the Ratchet library for WebSocket communication and AngularJS for the frontend interface.
+
+### **🚀 Key Features**
+
+-   **Real-Time Communication**: Utilizes WebSockets to enable instant messaging between users without the need for page reloads.
+    
+-   **One-to-One Chat**: Supports private conversations between two users, ensuring direct and secure communication.
+    
+-   **AngularJS Frontend**: Employs AngularJS to create a responsive and dynamic user interface.
+    
+-   **Database Integration**: Stores user socket IDs in a MySQL database to manage active connections and message routing.
+    
+-   **Open Source**: Released under the MIT License, allowing developers to freely use, modify, and distribute the software.
+    
+
+### **🛠️ Installation Guide**
+
+1.  **Clone the Repository**:
+    
+```bash
+git clone https://github.com/harendra21/Realtime-One-To-One-Chat.git
+```
+    
+2.  **Set Up the Server**:
+    
+    -   Place the cloned folder on your local server.
+        
+    -   Navigate to the project directory and run:
+
+```bash
+composer install
+```
+
+3.  **Configure the Database**:
+    
+    -   Create a new MySQL database named chat_db.
+        
+    -   Import the following table schema:
+    - 
+```sql
+CREATE TABLE `socket_id` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(255) DEFAULT NULL,
+  `socket_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+```
+
+3. Update the database credentials in src/App/Chat.php (lines 24 to 29) to match your setup.
+        
+    
+4.  **Start the WebSocket Server**:
+    
+    -   Navigate to the bin directory:
+
+```bash
+cd bin
+```
+
+5.  **Start the server using**:
+
+```bash
+php chat-server.php
+```
+
+6. **Access the Application**:
+    
+    -   Open your browser and navigate to the public folder of the project:
+```html
+http://localhost/path_to_your_folder/public
+```
+
+### **📌 Additional Information**
+
+-   **Latest Release**: Version 2, released on August 6, 2020, includes bug fixes, UI improvements, and integration of AngularJS for cleaner code.
+    
+-   **Repository Stats**:
+    
+    -   ⭐ Stars: 21
+        
+    -   🍴 Forks: 12
+        
+    -   📄 License: MIT
+
+
+For more details and to explore the source code, visit the GitHub repository: [harendra21/Realtime-One-To-One-Chat](https://github.com/harendra21/Realtime-One-To-One-Chat)
+
+ 

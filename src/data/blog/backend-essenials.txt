@@ -1,0 +1,105 @@
+---
+pubDatetime: 2024-04-11
+title: Unveiling the Backbone Dive Deep into Backend Engineering Essentials!
+category: backend
+series: backend-journey
+draft: true
+image: /og-images/articles/backend-essenials.jpg
+tags:
+  - backend
+  - learning
+  - webdev
+  - career
+description: A deep dive into backend engineering beyond frameworks, focusing on core concepts like communication protocols, databases, security, and scalability.
+---
+
+![Cover Image](/og-images/articles/backend-essenials.jpg)
+
+## Introduction 
+
+Even after diving into building basic backend CRUD apps and moving beyond the initial thrill, I still find myself baffled by terms like "Distributed systems." Despite my efforts with Googling and tutorials, concepts like the importance of tools such as Kafka or RabbitMQ, understanding Microservices, and why gRPC is prevalent in this architecture continue to elude me. There's a lot to unpack, and it leaves me scratching my head.
+
+```python
+# complete BS!
+backend_development == the_framework
+```
+
+---
+
+## My previous idea about backend engineering
+
+I don't blame myself, or the many other new developers navigating the backend landscape, for our shallow understanding of the subject. The reality is, if you search for "Learn Backend Development/Engineering" on major learning platforms like YouTube, Coursera, or Udemy, you'll likely find that 90% of the results are titled something like:
+
+- "Learn Backend Development with Django"
+- "Master Node.js Backend Development"
+- "The Spring Boot Backend Development Full Course"
+
+It's no wonder many of us struggle to grasp the broader concepts when the focus is often on specific frameworks or technologies. But isn't backend development more than just mastering a programming language or framework? Don't get me wrong though, there is some awesome people in the community who deeply explore the subject. Later on, I'll mention some of them who have really helped me gain a better understanding of things around me thus far.
+
+---
+
+## My new understanding of backend engineering
+
+In my exploration of backend engineering, I'm delving into crucial components that drive complex backend infrastructure. We'll delve into topics such as how data flows between clients and servers, storing information in databases securely, and maintaining overall system safety. Additionally, we'll explore tools designed to enhance performance and streamline development processes.
+The following list of essential backend concepts that i will be exploring, learning, and implementing in my journey:
+
+- **Communication Protocols**: 
+  Facilitate data exchange between client and server (e.g., HTTP for web browsing, WebSocket for real-time communication).
+
+- **Web Servers**: 
+  Handle client requests, serve web content, and execute server-side logic to generate dynamic web pages.
+
+- **Databases**: 
+  Store and retrieve data, with relational databases using structured tables and non-relational databases offering flexible data models.
+
+- **Proxies**: 
+  Act as intermediaries between clients and servers, improving security, performance, and scalability by playing various roles from caching to load balancing to others.
+
+- **Caching**: 
+  Enhance performance and reduce server load by storing frequently accessed data in temporary storage for quick retrieval.
+
+- **Message Queues**: 
+  Enable asynchronous communication between distributed components, allowing systems to process tasks independently and efficiently.
+
+- **Web Frameworks**: 
+  Simplify backend development by providing pre-built components and structures to streamline the creation of web applications.
+
+- **Security**: 
+  Ensure the protection of backend systems from threats through encryption, firewalls, and authentication mechanisms and security protocols.
+
+--- 
+
+![Core backend engineering concepts](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8t76cay50onx4n1ft91.gif)
+
+---
+
+## Foundations matter
+> Prioritize Concepts Over Frameworks and Languages, they are just tools at the end!
+
+One of the most valuable lessons I've learned so far is to never rely on any specific framework or programming language. Instead, I aim to be what I like to call a "Framework/Language-agnostic engineer." This means having a solid foundation in the underlying and universal concepts of backend or computer science in general, which can be easily applied in any language or framework.
+
+For instance, understanding concepts like concurrency and asynchronous I/O in pure computer science terms before diving into specific implementations like Python's "asyncio" library or JavaScript promises is crucial. Similarly, grasping the idea of web APIs, whether they're RESTful, gRPC, or GraphQL, and then learning an implementation like Express or Django Rest Framework is essential.
+
+Too often, aspiring backend developers take the reverse path, confining themselves to a specific technology and getting locked into a shallow, syntax-level understanding of the subject. This can leave them struggling to build complex apps or debug simple ones when serious problems arise. Even worse, they may become entrenched in one implementation or design philosophy in an ever-changing field like backend engineering, where yesterday's new technologies are today's old ones. The only constant is the concept behind them.
+
+This principle has contributed significantly to where I am today. A few months ago, I applied for a frontend position at the company I work for now. At the time, they didn't really need frontend developers. However, I ended up getting a backend developer position despite having very limited experience in backend and not even with the tech stack they use. This was mainly because I showed the interviewer that for me:
+> Technologies are just tools that come and go, and what really matters is the ideas and concepts behind them.
+
+---
+
+## Resources That helped me a lot
+
+- [**Roadmap.sh**](https://roadmap.sh/backend): This website is like a treasure map for backend development! It lays out a clear path with lots of helpful resources to guide you along the way.
+
+
+- [**Hussein Nasser**](https://www.youtube.com/@hnasr): Oh, this guy is awesome! Hussein Nasser talks about all things backend in a way that's easy to understand. He's not just about coding; he dives deep into why things work the way they do and gives real-life examples.
+[Hussein Nasser YouTube Channel]
+
+
+- [**Amigos Code**](https://www.youtube.com/@amigoscode): If you're into Java and Spring framework, you'll love Amigos Code. They break down backend development into simple steps and give practical advice without any fancy promises. It's like chatting with a friend who knows a lot about coding!
+
+## Conclusion
+
+As we wrap up our exploration of key backend engineering concepts, it's clear that there's still much more to learn. From communication protocols to security measures, each concept we've discussed offers a glimpse into the complexity of backend development.
+
+In our future blogs, we'll dive deeper into these topics, exploring them in greater detail and building practical projects to deepen our understanding. Join me on this journey as we continue to uncover the secrets of backend engineering and work towards building robust, efficient, and secure web applications together. Stay tuned for more exciting discoveries ahead!

@@ -1,0 +1,49 @@
+---
+import { Code2 } from "lucide-react";
+
+import type { ExperiencePosition } from "@/lib/types";
+import Badge from "@/components/ui/badge.astro";
+import { markdownToHtml } from "@/lib/markdown";
+
+interface Props {
+  position: ExperiencePosition;
+}
+
+const { position } = Astro.props;
+---
+
+<div>
+  <div class="block w-full text-left">
+    <div class="relative z-1 mb-1 flex items-center space-x-3">
+      <Code2 className="size-4 bg-background" />
+
+      <h3 class="text-base font-black underline-offset-4">
+        {position.title}
+      </h3>
+    </div>
+
+    <span
+      class="flex items-center gap-2 pl-7 font-mono text-sm text-foreground"
+    >
+      {position.year}
+    </span>
+  </div>
+
+  <div
+    class="my-4 overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+  >
+    <div
+      set:html={markdownToHtml(position.description, "ml-7 text-sm leading-7")}
+    />
+
+    {
+      Array.isArray(position.skills) && position.skills.length > 0 && (
+        <div class="justify-startj mt-2 ml-7 flex max-w-full flex-wrap items-center gap-1.5 py-2">
+          {position.skills.map((skill, index) => {
+            return <Badge>{skill}</Badge>;
+          })}
+        </div>
+      )
+    }
+  </div>
+</div>

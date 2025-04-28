@@ -1,0 +1,50 @@
+---
+import Pattern from "@/components/ui/pattern.astro";
+import PageLayout from "@/layouts/page-layout.astro";
+
+import Box from "@/components/box/index.astro";
+import BoxHeader from "@/components/box/header.astro";
+import BoxTitle from "@/components/box/title.astro";
+import { getCollection } from "astro:content";
+import ProjectItem from "@/components/sections/projects/project-item.astro";
+
+const projects = await getCollection("projects");
+
+const getSortedProjects = (projects: any, type: any) => {
+  return projects
+    .filter((project: any) => project.data.type === type)
+    .sort((a: any, b: any) => a.data.sortOrder - b.data.sortOrder);
+};
+
+const coreProjects = getSortedProjects(projects, "core");
+const sideProjects = getSortedProjects(projects, "side");
+
+---
+
+<PageLayout
+  description="A collection of things I’ve built, full-stack apps, experiments, and side projects."
+  title="My Projects"
+>
+  <Pattern />
+  <Box>
+    <BoxHeader>
+      <BoxTitle> Built to Last </BoxTitle>
+    </BoxHeader>
+
+    {coreProjects.map((item: any) => <ProjectItem project={item} />)}
+  </Box>
+
+  {
+    sideProjects.length > 0 && (
+      <Pattern />
+      <Box>
+        <BoxHeader>
+          <BoxTitle>Side Hustles</BoxTitle>
+        </BoxHeader>
+        {sideProjects.map((item: any) => <ProjectItem project={item} />)}
+      </Box>
+    )
+  }
+ 
+  <Pattern />
+</PageLayout>
