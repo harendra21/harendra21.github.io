@@ -1,16 +1,24 @@
 setTimeout(function () {
-    chatInit(true);
+    chatInit();
+    chatToggle()
 }, 1000);
 document.addEventListener("astro:after-swap", () => {
     window.N8NChatWidgetInitialized = false;
-    chatInit(false);
-    if (window.N8NChatOpened) {
-        var chatToggle = document.querySelector('.chat-toggle');
-        chatToggle.click();
-    }
+    chatInit();
+    chatToggle()
 });
 
-function chatInit(toggle) {
+function chatToggle() {
+    console.log('chatToggle', localStorage.getItem('n8nChatOpened'));
+    if (localStorage.getItem('n8nChatOpened') && localStorage.getItem('n8nChatOpened') === 'true') {
+        var chatToggle = document.querySelector('.chat-toggle');
+        if (chatToggle) chatToggle.click();
+        var newChatBtn = document.querySelector('.new-chat-btn');
+        if (newChatBtn) newChatBtn.click();
+    }
+}
+
+function chatInit() {
 
     window.ChatWidgetConfig = {
         webhook: {
@@ -607,7 +615,7 @@ function chatInit(toggle) {
 
     // Modify the chat interface activation to load previous messages
     newChatBtn.addEventListener('click', () => {
-        window.N8NChatOpened = true;
+        window.N8NChatOpened = false;
         startNewConversation();
         // loadMessages();
     });
@@ -632,15 +640,15 @@ function chatInit(toggle) {
     });
 
     toggleButton.addEventListener('click', () => {
-        window.N8NChatOpened = true;
+        localStorage.setItem('n8nChatOpened', !chatContainer.classList.contains('open'));
         chatContainer.classList.toggle('open');
     });
 
     // Add close button handlers
     const closeButtons = chatContainer.querySelectorAll('.close-button');
     closeButtons.forEach(button => {
-        window.N8NChatOpened = false;
         button.addEventListener('click', () => {
+            localStorage.setItem('n8nChatOpened', false);
             chatContainer.classList.remove('open');
         });
     });
