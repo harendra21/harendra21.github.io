@@ -283,6 +283,7 @@
         .n8n-chat-widget .chat-footer a {
             color: var(--chat--color-primary);
             text-decoration: none;
+            font-weight: 600;
             font-size: 12px;
             opacity: 0.8;
             transition: opacity 0.2s;
@@ -327,10 +328,6 @@
         @keyframes loading {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
-        }
-        a {
-            text-decoration: underline;
-            font-weight: 600;
         }
     `;
 
