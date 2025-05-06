@@ -36,7 +36,8 @@ function chatInit() {
             secondaryColor: '#000000', //Secondary color
             position: 'right', //Position of the widget (left or right)
             backgroundColor: '#ffffff', //Background color of the chat widget
-            fontColor: '#333333' //Text color for messages and interface
+            fontColor: '#333333', //Text color for messages and interface
+            linkColor: 'rgb(29, 155, 240)' //Link color for links
         }
     };
 
@@ -47,6 +48,7 @@ function chatInit() {
                 --chat--color-secondary: var(--n8n-chat-secondary-color, #6b3fd4);
                 --chat--color-background: var(--n8n-chat-background-color, #ffffff);
                 --chat--color-font: var(--n8n-chat-font-color, #333333);
+                --chat--color-link: var(--n8n-chat-link-color, #333333);
                 font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
     
@@ -65,6 +67,11 @@ function chatInit() {
                 overflow: hidden;
                 font-family: inherit;
             }
+                .n8n-chat-widget .chat-container a{
+                    color: var(--chat--color-link);
+                    text-decoration: underline;
+                    font-weight: 600;
+                }
     
             .n8n-chat-widget .chat-container.position-left {
                 right: auto;
@@ -300,7 +307,7 @@ function chatInit() {
             }
     
             .n8n-chat-widget .chat-footer a {
-                color: var(--chat--color-primary);
+                color: blue;
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 12px;
@@ -375,7 +382,8 @@ function chatInit() {
             poweredBy: {
                 text: 'Powered by With Code Example',
                 link: 'https://withcodeexample.com'
-            }
+            },
+            features: "Know about me (experiance, projects, intrests, skills), or send email."
         },
         style: {
             primaryColor: '',
@@ -409,6 +417,7 @@ function chatInit() {
     widgetContainer.style.setProperty('--n8n-chat-secondary-color', config.style.secondaryColor);
     widgetContainer.style.setProperty('--n8n-chat-background-color', config.style.backgroundColor);
     widgetContainer.style.setProperty('--n8n-chat-font-color', config.style.fontColor);
+    widgetContainer.style.setProperty('--n8n-chat-link-color', config.style.linkColor);
 
     const chatContainer = document.createElement('div');
     chatContainer.className = `chat-container${config.style.position === 'left' ? ' position-left' : ''}`;
@@ -444,7 +453,7 @@ function chatInit() {
                     <button type="submit">Send</button>
                 </div>
                 <div class="chat-footer">
-                    <a href="${config.branding.poweredBy.link}" target="_blank">${config.branding.poweredBy.text}</a>
+                    <div><small>${config.branding.features}</small></div>
                 </div>
             </div>
         `;
