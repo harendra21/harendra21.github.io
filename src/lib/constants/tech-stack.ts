@@ -11,7 +11,8 @@ import {
   PostgreSQL,
   Kubernetes,
   GoogleCloud,
-  AWS
+  AWS,
+  Yoga
 } from "developer-icons";
 
 
@@ -84,6 +85,10 @@ export const TECH_STACK = [
     title: "Supabase",
     href: "https://supabase.com/",
     icon: Supabase
+  },{
+    title: "Pocketbase",
+    href: "https://pocketbase.io/",
+    icon: Yoga
   },
 ];
 
