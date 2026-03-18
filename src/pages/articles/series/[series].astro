@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 
 const mediumUrl = "https://medium.com/@harendra21";
+const redirectContent = `0; url=${mediumUrl}`;
 
 export async function getStaticPaths() {
   const articles = await getCollection("blog");
@@ -18,12 +19,12 @@ export async function getStaticPaths() {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0; url=${mediumUrl}`} />
+    <meta http-equiv="refresh" content={redirectContent} />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redirecting to Medium</title>
-    <script is:inline>
-      window.location.replace({JSON.stringify(mediumUrl)});
+    <script define:vars={{ mediumUrl }}>
+      window.location.replace(mediumUrl);
     </script>
   </head>
   <body>
