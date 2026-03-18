@@ -3,9 +3,14 @@
   right: 20px;
   bottom: 20px;
   z-index: 60;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 12px;
 }
 
 .launchButton {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,22 +26,69 @@
   font-weight: 700;
   box-shadow: 0 22px 48px rgba(17, 17, 17, 0.28);
   letter-spacing: 0.02em;
+  transform: translateZ(0);
+  animation: launchBounce 1.8s ease-in-out infinite;
+}
+
+.launchButton::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: inherit;
+  border: 1px solid rgba(138, 90, 43, 0.28);
+  opacity: 0;
+  animation: launchRing 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.launchButton::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #f6b26b;
+  box-shadow: 0 0 0 0 rgba(246, 178, 107, 0.55);
+  animation: launchDot 1.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .panel {
   width: min(92vw, 390px);
-  margin-bottom: 12px;
+  max-height: 550px;
   overflow: hidden;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 28px;
   background: #fbf6ee;
   box-shadow: 0 24px 80px rgba(17, 17, 17, 0.22);
+  display: flex;
+  flex-direction: column;
+  transform-origin: bottom right;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.panelOpen {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.panelClosed {
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  pointer-events: none;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  flex: 0 0 auto;
   padding: 18px 18px 10px;
   border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   background: rgba(255, 255, 255, 0.7);
@@ -75,10 +127,12 @@
   font-size: 14px;
   line-height: 1.65;
   background: rgba(255, 255, 255, 0.7);
+  flex: 0 0 auto;
 }
 
 .messages {
-  max-height: 58vh;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   padding: 16px 16px 8px;
 }
@@ -86,6 +140,7 @@
 .row {
   display: flex;
   margin-bottom: 10px;
+  animation: bubbleIn 220ms ease-out both;
 }
 
 .rowUser {
@@ -123,9 +178,11 @@
   font-size: 14px;
   padding: 12px 14px;
   box-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+  animation: bubbleIn 180ms ease-out both;
 }
 
 .composer {
+  flex: 0 0 auto;
   padding: 14px 16px 16px;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
   background: rgba(255, 255, 255, 0.7);
@@ -206,6 +263,7 @@
 
   .panel {
     width: min(92vw, 390px);
+    max-height: calc(100vh - 96px);
   }
 
   .footer {
@@ -215,5 +273,68 @@
 
   .sendButton {
     width: 100%;
+  }
+}
+
+@keyframes bubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes launchBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 22px 48px rgba(17, 17, 17, 0.28);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 30px 62px rgba(17, 17, 17, 0.36);
+  }
+}
+
+@keyframes launchRing {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.45;
+  }
+}
+
+@keyframes launchDot {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(246, 178, 107, 0.55);
+  }
+
+  50% {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 10px rgba(246, 178, 107, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launchButton,
+  .launchButton::before,
+  .launchButton::after,
+  .row,
+  .typing,
+  .panel {
+    animation: none;
+    transition: none;
   }
 }
