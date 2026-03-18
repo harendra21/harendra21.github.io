@@ -1,44 +1,30 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleItem from "@/components/article-item.astro";
-import PageLayout from "@/layouts/page-layout.astro";
 
-import Pattern from "@/components/ui/pattern.astro";
-
-import Box from "@/components/box/index.astro";
-import BoxTitle from "@/components/box/title.astro";
-import BoxHeader from "@/components/box/header.astro";
+const mediumUrl = "https://medium.com/@harendra21";
 
 export async function getStaticPaths() {
-  const articels = await getCollection("blog");
-  return articels.map(article => ({
+  const articles = await getCollection("blog");
+
+  return articles.map(article => ({
     params: { category: article.data.category },
   }));
 }
-
-const { category } = Astro.params;
-
-const articels = await getCollection("blog");
-const categoryArticles = articels.filter(
-  article => article.data.category === category
-);
-
-// Page properties
-const title = category;
-const description = `Exploring ${category} insights, lessons, and discoveries from my software engineering journey.`;
 ---
 
-<PageLayout backLink="/articles" description={description} title={title}>
-  <Pattern />
-
-  <Box>
-    <BoxHeader>
-      <BoxTitle>Articles</BoxTitle>
-    </BoxHeader>
-    <div
-      class="flex w-full flex-col items-start justify-start divide-y divide-border"
-    >
-      {categoryArticles.map(article => <ArticleItem article={article} />)}
-    </div>
-  </Box>
-</PageLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${mediumUrl}`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting to Medium</title>
+    <script is:inline>
+      window.location.replace({JSON.stringify(mediumUrl)});
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href={mediumUrl}>{mediumUrl}</a>...</p>
+  </body>
+</html>

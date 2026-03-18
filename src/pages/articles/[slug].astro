@@ -1,36 +1,30 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import ArticleLayout from "@/layouts/article-layout.astro";
-import { render } from "astro:content";
-import { getReadingTime } from "@/lib/utils";
+import { getCollection } from "astro:content";
 
-export interface Props {
-  post: CollectionEntry<"blog">;
-}
+const mediumUrl = "https://medium.com/@harendra21";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
 
-  const postResult = posts.map(post => ({
+  return posts.map(post => ({
     params: { slug: post.id },
-    props: { post },
   }));
-
-  return postResult;
 }
-
-const { post } = Astro.props;
-
-const rendered = await render(post);
 ---
 
-<ArticleLayout
-  headings={rendered.headings}
-  title={post.data.title}
-  date={post.data.pubDatetime}
-  readTime={getReadingTime(post.body!) || "unknown"}
-  image={post.data.image}
-  description={post.data.description}
->
-  <rendered.Content />
-</ArticleLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${mediumUrl}`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting to Medium</title>
+    <script is:inline>
+      window.location.replace({JSON.stringify(mediumUrl)});
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href={mediumUrl}>{mediumUrl}</a>...</p>
+  </body>
+</html>
