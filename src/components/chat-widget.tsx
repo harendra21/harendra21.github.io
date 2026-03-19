@@ -10,6 +10,7 @@ type ChatMessage = {
 };
 
 const STORAGE_KEY = "harendra-chat-widget:v1";
+const SESSION_ID_KEY = "harendra-chat-widget:session-id:v1";
 const BACKEND_URL = "https://harendra-ai-agent.vercel.app";
 
 function getInitialMessages(): ChatMessage[] {
@@ -47,12 +48,38 @@ function loadMessages() {
   }
 }
 
+function createConversationId() {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+
+  return `chat-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function loadSessionId() {
+  if (typeof window === "undefined") {
+    return createConversationId();
+  }
+
+  const existing = window.localStorage.getItem(SESSION_ID_KEY);
+  if (existing) {
+    return existing;
+  }
+
+  const next = createConversationId();
+  window.localStorage.setItem(SESSION_ID_KEY, next);
+  return next;
+}
+
 export default function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>(getInitialMessages());
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sessionId, setSessionId] = useState<string>(() =>
+    createConversationId(),
+  );
   const endRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -60,6 +87,7 @@ export default function ChatWidget() {
 
   useEffect(() => {
     setMessages(loadMessages());
+    setSessionId(loadSessionId());
   }, []);
 
   useEffect(() => {
@@ -111,7 +139,7 @@ export default function ChatWidget() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ messages: nextMessages }),
+        body: JSON.stringify({ messages: nextMessages, sessionId }),
       });
 
       const data = (await response.json()) as
@@ -146,11 +174,14 @@ export default function ChatWidget() {
 
   function resetChat() {
     const initial = getInitialMessages();
+    const nextSessionId = createConversationId();
     setMessages(initial);
     setInput("");
     setError(null);
+    setSessionId(nextSessionId);
     if (typeof window !== "undefined") {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
+      window.localStorage.setItem(SESSION_ID_KEY, nextSessionId);
     }
   }
 
