@@ -131,6 +131,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@media (max-width: 640px) {
+  body {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
+}
+
 body::before {
   content: "";
   pointer-events: none;
