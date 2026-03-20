@@ -19,14 +19,21 @@ const {
 const formats = ["avif", "webp"];
 ---
 
-<Picture
-  class:list={[className]}
-  src={ImgAvatar}
-  widths={[size, size * 2]}
-  sizes={`(max-width: ${size}px) 100vw, ${size}px`}
-  formats={formats}
-  alt={`${PROFILE_INFO.displayName}'s avatar`}
-  quality="mid"
-  loading={priority ? "eager" : "lazy"}
-  decoding="async"
-/>
+<div
+  class:list={[
+    "relative aspect-square overflow-hidden rounded-[1.5rem] border border-border/70 bg-card shadow-[0_20px_60px_rgba(0,0,0,0.12)]",
+    className,
+  ]}
+>
+  <Picture
+    class="h-full w-full object-cover object-center"
+    src={ImgAvatar}
+    widths={[size, size * 2]}
+    sizes={`(max-width: ${size}px) 100vw, ${size}px`}
+    formats={formats}
+    alt={`${PROFILE_INFO.displayName}'s avatar`}
+    quality="mid"
+    loading={priority ? "eager" : "lazy"}
+    decoding="async"
+  />
+</div>

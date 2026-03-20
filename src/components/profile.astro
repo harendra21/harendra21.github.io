@@ -1,119 +1,149 @@
 ---
 import LouaiAvatar from "@/components/ui/louai-avatar.astro";
-import Box from "@/components/box/index.astro";
-import BoxContent from "@/components/box/content.astro";
+import Badge from "@/components/ui/badge.astro";
 
 import { PROFILE_INFO } from "@/lib/constants/profile";
+import { SOCIAL_LINKS } from "@/lib/constants";
+import { buttonVariants } from "@/lib/utils";
 
-import { SOCIAL_LINKS } from "@/lib/constants/index";
-import { Briefcase, Phone } from "lucide-react";
+const primaryCtaClass = buttonVariants({ variant: "default", size: "lg" });
+const secondaryCtaClass = buttonVariants({ variant: "outline", size: "lg" });
+const tertiaryCtaClass = buttonVariants({ variant: "ghost", size: "lg" });
 
-import VerifiedIcon from "@/components/ui/icons/verified.astro";
-import XIcon from "@/components/ui/icons/x.astro";
-import GithubIcon from "@/components/ui/icons/github.astro";
-import LinkedinIcon from "@/components/ui/icons/linkedin.astro";
+const heroSummary =
+  "I build production web apps with Golang, Angular, AWS, and GCP. I turn backend complexity into product experiences that feel fast, dependable, and easy to use.";
+
+const highlights = [
+  "8+ years building web products",
+  "Production-focused engineering",
+  "Code reviews and team mentoring",
+] as const;
+
+const focusAreas = [
+  "Golang",
+  "Angular",
+  "AWS / GCP",
+  "Kubernetes",
+] as const;
 ---
 
-<div class="screen-line-after relative flex items-center p-4 md:border-x">
-  <div class="shrink-0">
-    <div class="relative z-1 mx-0.5 my-1">
-      <LouaiAvatar
-        className="size-20 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background sm:size-28"
-      />
-    </div>
-  </div>
+<section class="screen-line-after relative overflow-hidden px-4 py-8 md:border-x md:px-6 md:py-10 lg:px-8">
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.12),_transparent_38%),radial-gradient(circle_at_bottom_left,_rgba(0,0,0,0.06),_transparent_32%)] dark:bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.18),_transparent_38%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.05),_transparent_32%)]"
+  />
 
-  <div class="flex flex-1 flex-col">
-    <div class="flex grow items-end pb-1 pl-4">
-      <div class="line-clamp-1 font-mono text-xs text-muted-foreground">
-        {PROFILE_INFO.slogan}
-      </div>
-    </div>
+  <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.85fr)] lg:items-start">
+    <div class="space-y-6">
+      <Badge>Open to backend and full-stack roles</Badge>
 
-    <div class="">
-      <h1 class="flex items-center gap-x-2 pl-4 text-2xl font-black">
-        {PROFILE_INFO.displayName}
-        <VerifiedIcon class="size-4 text-blue-500" />
-      </h1>
+      <div class="space-y-4">
+        <p class="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+          Portfolio / Resume / Projects
+        </p>
 
-      <div class="py-1 pl-4">
-        <p class="text-sm !font-normal">
-          {PROFILE_INFO.role}
+        <div class="space-y-3">
+          <h1 class="max-w-[12ch] text-5xl font-black leading-[0.9] tracking-tight sm:text-6xl lg:text-[4.8rem]">
+            <span class="block">Harendra Kumar</span>
+            <span class="block">Kanojiya</span>
+          </h1>
+
+          <p class="max-w-2xl text-lg font-semibold text-foreground/85 sm:text-xl">
+            {PROFILE_INFO.role}
+          </p>
+        </div>
+
+        <p class="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          {heroSummary}
         </p>
       </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href={PROFILE_INFO.resumeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={primaryCtaClass}
+        >
+          Download Resume
+        </a>
+        <a
+          href={`mailto:${PROFILE_INFO.email}`}
+          class={secondaryCtaClass}
+        >
+          Email Me
+        </a>
+        <a href="/projects" class={tertiaryCtaClass}>
+          See Selected Work
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-1">
+        {focusAreas.map(item => (
+          <Badge>{item}</Badge>
+        ))}
+      </div>
     </div>
+
+    <aside class="relative lg:pt-4">
+      <div class="rounded-[2rem] border bg-card/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur dark:shadow-[0_20px_60px_rgba(0,0,0,0.32)]">
+        <div class="flex items-center justify-between gap-3">
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+            Visual intro
+          </p>
+
+          <Badge>Open now</Badge>
+        </div>
+
+        <div class="mt-4">
+          <LouaiAvatar
+            className="mx-auto w-full max-w-[20rem]"
+            size={720}
+            priority={true}
+          />
+        </div>
+
+        <div class="mt-5 border-t border-dashed pt-4">
+          <p class="text-sm font-semibold text-foreground">
+            Building reliable products that are easy to ship and easy to use.
+          </p>
+
+          <div class="mt-3 grid gap-2">
+            {highlights.map(item => (
+              <div class="flex items-center gap-2 rounded-2xl border bg-background/70 px-3 py-2 text-sm text-muted-foreground">
+                <div class="size-1.5 shrink-0 rounded-full bg-primary" />
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-5 border-t border-dashed pt-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            Quick links
+          </p>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            {SOCIAL_LINKS.map(link => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+              >
+                <link.icon className="size-4" />
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={`mailto:${PROFILE_INFO.email}`}
+              class="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+            >
+              {PROFILE_INFO.email}
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
-</div>
-
-{/* Callout badge */}
-<div
-  class="screen-line-after inline-flex w-full items-center gap-2 border-x bg-yellow-100 px-3 py-2 text-sm font-semibold dark:bg-yellow-500/10"
->
-  <span class="animate-bounce text-base">👋</span> I'm open to new opportunities
-  —
-  <a href={`mailto:${PROFILE_INFO.email}`} class="underline underline-offset-4">
-    get in touch
-  </a>
-</div>
-
-<Box>
-  <BoxContent className="space-y-3">
-    <span class="flex items-center justify-start gap-2">
-      <Briefcase className="size-4" />
-      Take a look at my
-      <a
-        href={`${PROFILE_INFO.resumeLink}`}
-        target="_blank"
-        class="underline underline-offset-4"
-      >
-        Resume
-      </a>
-    </span>
-
-    <span class="flex items-center justify-start gap-2">
-      <XIcon className="size-4" />
-      Follow me on
-      <a
-        href={SOCIAL_LINKS[2].url}
-        target="_blank"
-        class="underline underline-offset-4"
-      >
-        Twitter
-      </a>
-    </span>
-
-    <span class="flex items-center justify-start gap-2">
-      <LinkedinIcon className="size-4" />
-      Let's connect on
-      <a
-        href={SOCIAL_LINKS[1].url}
-        class="underline underline-offset-4"
-        target="_blank"
-      >
-        LinkedIn
-      </a>
-    </span>
-
-    <span class="flex items-center justify-start gap-2">
-      <GithubIcon className="size-4" />
-      Check out my repos on
-      <a
-        href={SOCIAL_LINKS[0].url}
-        class="underline underline-offset-4"
-        target="_blank"
-      >
-        GitHub
-      </a>
-    </span>
-    <span class="flex items-center justify-start gap-2">
-      <Phone className="size-4" />
-      Call me on <a
-      href=`tel:${PROFILE_INFO.phone}`
-      class="underline underline-offset-4"
-      target="_blank"
-    >
-    {PROFILE_INFO.phone}
-    </a>
-    </span>
-  </BoxContent>
-</Box>
+</section>

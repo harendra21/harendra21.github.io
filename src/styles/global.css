@@ -131,6 +131,32 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.04), transparent 24%);
+}
+
+.dark body::before {
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.14), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 24%);
+}
+
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
 h1,
 h2,
 h3 {
@@ -171,4 +197,3 @@ pre {
 .copy-code svg {
   @apply size-4;
 }
-

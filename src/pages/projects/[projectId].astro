@@ -10,7 +10,9 @@ export interface Props {
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
 
-  const project = projects.map(project => ({
+  const project = projects
+    .filter(project => project.data.publish !== false)
+    .map(project => ({
     params: { projectId: project.id },
     props: { project },
   }));
@@ -29,6 +31,7 @@ const rendered = await render(project);
   sourceCode={project.data.sourceCode}
   preview={project.data.preview}
   image={project.data.image}
+  video={project.data.video}
   description={project.data.description}
 >
   <rendered.Content />

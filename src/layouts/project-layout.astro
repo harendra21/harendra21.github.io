@@ -17,6 +17,7 @@ import BoxContent from "@/components/box/content.astro";
 
 import LinkBtn from "@/components/ui/link-btn.astro";
 import Badge from "@/components/ui/badge.astro";
+import ProjectMedia from "@/components/ui/project-media";
 
 interface Props {
   title: string;
@@ -24,10 +25,11 @@ interface Props {
   sourceCode?: string;
   preview?: string;
   image?: string;
+  video?: string;
   description: string;
 }
 
-const { title, technologies, description, preview, sourceCode, image } =
+const { title, technologies, description, preview, sourceCode, image, video } =
   Astro.props;
 ---
 
@@ -81,18 +83,32 @@ const { title, technologies, description, preview, sourceCode, image } =
         >
       </BoxHeader>
 
-      <BoxContent className="space-y-4">
-        <div class="flex flex-wrap gap-1.5">
-          {
-            technologies.map(technology => {
-              return <Badge>{technology}</Badge>;
-            })
-          }
-        </div>
-      </BoxContent>
-    </Box>
+    <BoxContent className="space-y-4">
+      <div class="flex flex-wrap gap-1.5">
+        {
+          technologies.map(technology => {
+            return <Badge>{technology}</Badge>;
+          })
+        }
+      </div>
+    </BoxContent>
 
-    <Pattern />
+    {
+      video && (
+        <BoxContent className="pt-0">
+          <ProjectMedia
+            client:load
+            kind="video"
+            src={video}
+            poster={image}
+            caption="Project preview"
+          />
+        </BoxContent>
+      )
+    }
+  </Box>
+
+  <Pattern />
 
     <Box className="min-w-full">
       <BoxContent className="pt-8">

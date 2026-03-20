@@ -1,26 +1,47 @@
 ---
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { PROFILE_INFO } from "@/lib/constants/profile";
 ---
 
 <footer class="w-full border-t border-dashed md:border-b">
   <div
-    class="mx-auto flex max-w-3xl flex-col-reverse items-center justify-between gap-4 border-dashed px-4 py-3 md:border-x lg:flex-row"
+    class="mx-auto flex max-w-3xl flex-col gap-4 border-dashed px-4 py-4 md:border-x lg:flex-row lg:items-center lg:justify-between"
   >
-    <p class="text-sm text-foreground/70">
-      Built by <a
-        href="https://github.com/Louai-Zokerburg"
-        class="font-medium text-primary underline underline-offset-4" rel="nofollow">Louai.b</a
-      > • source code available on <a
-        href="https://github.com/Louai-Zokerburg/louai"
-        class="font-medium text-primary underline underline-offset-4" rel="nofollow">Github</a
-      >
-    </p>
+    <div class="space-y-1">
+      <p class="text-sm font-semibold">
+        {PROFILE_INFO.displayName}
+      </p>
+      <p class="text-sm text-foreground/70">
+        Open to backend and full-stack opportunities. Reach out at
+        <a
+          href={`mailto:${PROFILE_INFO.email}`}
+          class="font-medium text-primary underline underline-offset-4"
+        >
+          {PROFILE_INFO.email}
+        </a>
+      </p>
+    </div>
 
-    <div class="flex items-center justify-center gap-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <a
+        href={PROFILE_INFO.resumeLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-medium text-primary underline underline-offset-4"
+      >
+        Resume
+      </a>
+
       {
         SOCIAL_LINKS.map(link => (
-          <a href={link.url} aria-label={link.name}>
-            <link.icon className="size-4 duration-150 hover:text-primary" />
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.name}
+            class="text-foreground/70 transition-colors hover:text-foreground"
+          >
+            <link.icon className="size-4" />
           </a>
         ))
       }

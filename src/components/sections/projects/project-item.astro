@@ -14,32 +14,45 @@ const { project } = Astro.props;
 
 <a
   href={`/projects/${project.id}`}
-  class="flex cursor-pointer items-center not-last:border-b"
+  class="group flex cursor-pointer items-stretch border-b last:border-b-0 transition-colors duration-200 hover:bg-accent/30 focus-visible:bg-accent/30 focus-visible:outline-none"
 >
-  <FolderCodeIcon className="mx-4.5 size-5 shrink-0 text-muted-foreground" />
+  <FolderCodeIcon className="mx-4.5 mt-5 size-5 shrink-0 text-muted-foreground transition-colors duration-200 group-hover:text-foreground" />
 
-  <div class="group flex w-full cursor-pointer flex-col gap-y-3 border-l p-4">
-    <div class="flex w-full items-center justify-between text-left select-none">
+  <div class="flex w-full cursor-pointer flex-col gap-y-3 border-l p-4 sm:p-5">
+    <div class="flex w-full items-start justify-between gap-4 text-left select-none">
       <h3
-        class="text-lg font-semibold underline-offset-6 group-hover:underline"
+        class="text-lg font-semibold underline-offset-6 transition-colors group-hover:underline"
       >
         {project.data.name}
       </h3>
 
       <ChevronRightIcon
-        className="size-4 shrink-0 text-muted-foreground transition-transform duration-150 group-hover:translate-x-1"
+        className="mt-1 size-4 shrink-0 text-muted-foreground transition-transform duration-150 group-hover:translate-x-1"
       />
     </div>
 
     <MarkdownRenderer
-      className="text-xs leading-5 font-medium md:text-sm"
+      className="text-sm leading-6 font-medium text-muted-foreground"
       content={project.data.description}
     />
 
+    <div class="flex flex-wrap items-center gap-2">
+      {
+        project.data.type === "core" ? (
+          <Badge>Production</Badge>
+        ) : (
+          <Badge>Side project</Badge>
+        )
+      }
+
+      {project.data.preview && <Badge>Live preview</Badge>}
+      {project.data.sourceCode && <Badge>Source available</Badge>}
+    </div>
+
     {
       project.data.technologies.length > 0 && (
-        <div class="flex flex-wrap gap-1.5">
-          {project.data.technologies.map(technology => {
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          {project.data.technologies.slice(0, 5).map(technology => {
             return <Badge>{technology}</Badge>;
           })}
         </div>

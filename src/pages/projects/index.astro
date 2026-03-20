@@ -12,6 +12,7 @@ const projects = await getCollection("projects");
 
 const getSortedProjects = (projects: any, type: any) => {
   return projects
+    .filter((project: any) => project.data.publish !== false)
     .filter((project: any) => project.data.type === type)
     .sort((a: any, b: any) => a.data.sortOrder - b.data.sortOrder);
 };

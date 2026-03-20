@@ -21,41 +21,25 @@ import { cn, buttonVariants } from "@/lib/utils";
   <span class="sr-only">Toggle theme</span>
 </button>
 <script is:inline>
-  // Check for theme preference in localStorage or system preference
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
-
-  // Set theme on document and in localStorage
-  const setThemeAppearance = theme => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+  const syncTheme = theme => {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.style.colorScheme = theme;
     localStorage.setItem("theme", theme);
   };
 
-  // Apply the theme immediately to avoid flash
-  const theme = getThemePreference();
-  setThemeAppearance(theme);
-
-  document.addEventListener("astro:page-load", () => {
+  const bindToggle = () => {
     const toggleButton = document.getElementById("theme-toggle");
 
-    // Toggle theme function
-    const toggleMode = () => {
-      const isDarkMode = document.documentElement.classList.contains("dark");
-      const newTheme = isDarkMode ? "light" : "dark";
-      setThemeAppearance(newTheme);
-    };
+    if (!toggleButton) return;
 
-    // Add click event listener
-    toggleButton?.addEventListener("click", toggleMode);
-  });
+    toggleButton.onclick = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      syncTheme(isDarkMode ? "light" : "dark");
+    };
+  };
+
+  bindToggle();
+  document.addEventListener("astro:page-load", bindToggle);
+  document.addEventListener("astro:after-swap", bindToggle);
 </script>

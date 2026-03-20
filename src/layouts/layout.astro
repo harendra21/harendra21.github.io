@@ -54,34 +54,40 @@ const structuredData = {
 };
 ---
 
-<script>
-  document.addEventListener("astro:after-swap", () => {
+<script is:inline>
+  (() => {
+    const storageKey = "theme";
+
     const getThemePreference = () => {
       if (
         typeof localStorage !== "undefined" &&
-        localStorage.getItem("theme")
+        localStorage.getItem(storageKey)
       ) {
-        return localStorage.getItem("theme");
+        return localStorage.getItem(storageKey);
       }
       return window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
     };
 
-    const isDark = getThemePreference() === "dark";
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    const applyTheme = theme => {
+      const isDark = theme === "dark";
+      document.documentElement.classList.toggle("dark", isDark);
+      document.documentElement.style.colorScheme = theme;
 
-    if (typeof localStorage !== "undefined") {
-      const observer = new MutationObserver(() => {
-        const isDark = document.documentElement.classList.contains("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-      });
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-    }
-  });
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem(storageKey, theme);
+      }
+    };
+
+    const syncTheme = () => applyTheme(getThemePreference());
+
+    syncTheme();
+    document.addEventListener("astro:page-load", syncTheme);
+    document.addEventListener("astro:after-swap", syncTheme);
+
+    window.__setTheme = applyTheme;
+  })();
 </script>
 
 <html lang="en" class="scroll-smooth">
@@ -113,8 +119,6 @@ const structuredData = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <script defer src="https://analytics.withcodeexample.com/script.js" data-website-id="d09fbbe3-88fa-4c62-b5ed-26d69e43a210"></script>
-
     <ClientRouter />
 
     <!-- Google JSON-LD Structured data -->
@@ -124,7 +128,8 @@ const structuredData = {
       set:html={JSON.stringify(structuredData)}
     />
 
-    <meta name="theme-color" content="" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080808" />
   </head>
   <body class="relative min-h-screen overflow-x-hidden">
     <slot />
