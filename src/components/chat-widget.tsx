@@ -41,7 +41,7 @@ function loadMessages() {
       item =>
         item &&
         (item.role === "user" || item.role === "assistant") &&
-        typeof item.content === "string",
+        typeof item.content === "string"
     );
   } catch {
     return getInitialMessages();
@@ -78,7 +78,7 @@ export default function ChatWidget() {
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [conversationId, setConversationId] = useState<string>(() =>
-    loadConversationId(),
+    loadConversationId()
   );
   const endRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
@@ -109,7 +109,7 @@ export default function ChatWidget() {
       if (!form) return;
 
       const submitButton = form.querySelector<HTMLButtonElement>(
-        'button[type="submit"]',
+        'button[type="submit"]'
       );
 
       submitButton?.click();
@@ -157,7 +157,7 @@ export default function ChatWidget() {
       setError(
         requestError instanceof Error
           ? requestError.message
-          : "Unable to reach the assistant right now.",
+          : "Unable to reach the assistant right now."
       );
       setMessages(current => [
         ...current,
@@ -185,7 +185,9 @@ export default function ChatWidget() {
   }
 
   return (
-    <div className={styles.root}>
+    <div
+      className={`${styles.root} ${isOpen ? styles.rootOpen : styles.rootClosed}`}
+    >
       <button
         type="button"
         className={styles.launchButton}
@@ -195,76 +197,81 @@ export default function ChatWidget() {
         {isOpen ? "×" : "Chat"}
       </button>
 
-      <section
-        className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
-        aria-hidden={!isOpen}
-      >
-        <header className={styles.header}>
-          <div>
-            <p className={styles.eyebrow}>Harendra AI</p>
-            <h2 className={styles.title}>Chat with Harendra</h2>
-          </div>
-          <button type="button" className={styles.resetButton} onClick={resetChat}>
-            New chat
-          </button>
-        </header>
-
-        <p className={styles.description}>
-          Ask about experience, projects, skills, or job change.
-        </p>
-
-        <div className={styles.messages}>
-          {messages.map((message, index) => (
-            <div
-              key={`${message.role}-${index}-${message.content.slice(0, 12)}`}
-              className={`${styles.row} ${
-                message.role === "user" ? styles.rowUser : styles.rowAssistant
-              }`}
-              style={{ animationDelay: `${Math.min(index * 40, 240)}ms` }}
-            >
-              <div
-                className={`${styles.bubble} ${
-                  message.role === "user" ? styles.userBubble : styles.assistantBubble
-                }`}
-              >
-                {message.content}
-              </div>
+      {isOpen && (
+        <section className={`${styles.panel} ${styles.panelOpen}`}>
+          <header className={styles.header}>
+            <div>
+              <p className={styles.eyebrow}>Harendra AI</p>
+              <h2 className={styles.title}>Chat with Harendra</h2>
             </div>
-          ))}
-
-          {isSending ? <div className={styles.typing}>Typing...</div> : null}
-          <div ref={endRef} />
-        </div>
-
-        <form className={styles.composer} onSubmit={handleSubmit}>
-          <label className={styles.srOnly} htmlFor="chat-widget-input">
-            Type your message
-          </label>
-          <textarea
-            id="chat-widget-input"
-            ref={inputRef}
-            rows={3}
-            value={input}
-            onChange={event => setInput(event.target.value)}
-            onKeyDown={handleInputKeyDown}
-            placeholder="Type a question..."
-            className={styles.input}
-          />
-
-          <div className={styles.footer}>
-            <p className={styles.hint}>Context is saved in this browser.</p>
             <button
-              type="submit"
-              className={styles.sendButton}
-              disabled={isSending || !input.trim()}
+              type="button"
+              className={styles.resetButton}
+              onClick={resetChat}
             >
-              Send
+              New chat
             </button>
+          </header>
+
+          <p className={styles.description}>
+            Ask about experience, projects, skills, or job change.
+          </p>
+
+          <div className={styles.messages}>
+            {messages.map((message, index) => (
+              <div
+                key={`${message.role}-${index}-${message.content.slice(0, 12)}`}
+                className={`${styles.row} ${
+                  message.role === "user" ? styles.rowUser : styles.rowAssistant
+                }`}
+                style={{ animationDelay: `${Math.min(index * 40, 240)}ms` }}
+              >
+                <div
+                  className={`${styles.bubble} ${
+                    message.role === "user"
+                      ? styles.userBubble
+                      : styles.assistantBubble
+                  }`}
+                >
+                  {message.content}
+                </div>
+              </div>
+            ))}
+
+            {isSending ? <div className={styles.typing}>Typing...</div> : null}
+            <div ref={endRef} />
           </div>
 
-          {error ? <p className={styles.error}>{error}</p> : null}
-        </form>
-      </section>
+          <form className={styles.composer} onSubmit={handleSubmit}>
+            <label className={styles.srOnly} htmlFor="chat-widget-input">
+              Type your message
+            </label>
+            <textarea
+              id="chat-widget-input"
+              ref={inputRef}
+              rows={3}
+              value={input}
+              onChange={event => setInput(event.target.value)}
+              onKeyDown={handleInputKeyDown}
+              placeholder="Type a question..."
+              className={styles.input}
+            />
+
+            <div className={styles.footer}>
+              <p className={styles.hint}>Context is saved in this browser.</p>
+              <button
+                type="submit"
+                className={styles.sendButton}
+                disabled={isSending || !input.trim()}
+              >
+                Send
+              </button>
+            </div>
+
+            {error ? <p className={styles.error}>{error}</p> : null}
+          </form>
+        </section>
+      )}
     </div>
   );
 }
