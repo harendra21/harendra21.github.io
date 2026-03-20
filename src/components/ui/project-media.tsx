@@ -118,11 +118,11 @@ export default function ProjectMedia(props: Props) {
 
     return (
       <figure className={props.className}>
-        <div ref={frameRef} className="relative overflow-hidden rounded-2xl border border-border/70 bg-card">
+        <div ref={frameRef} className="relative isolate overflow-hidden rounded-2xl border border-border/70 bg-card">
           <button
             type="button"
             aria-label="Enter fullscreen"
-            className="absolute top-3 right-3 z-10 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/90 px-3 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur transition-colors hover:bg-accent"
+            className="absolute top-3 right-3 z-20 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/90 px-3 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur transition-colors touch-manipulation hover:bg-accent"
             onClick={() => {
               const node = frameRef.current;
               if (!node) return;
@@ -167,11 +167,11 @@ export default function ProjectMedia(props: Props) {
 
   return (
     <figure className={props.className}>
-      <div ref={frameRef} className="relative overflow-hidden rounded-2xl border border-border/70 bg-card">
+      <div ref={frameRef} className="relative isolate overflow-hidden rounded-2xl border border-border/70 bg-card">
         <button
           type="button"
           aria-label="Enter fullscreen"
-          className="absolute top-3 right-3 z-10 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/90 px-3 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur transition-colors hover:bg-accent"
+          className="absolute top-3 right-3 z-20 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/90 px-3 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur transition-colors touch-manipulation hover:bg-accent"
           onClick={() => {
             const node = frameRef.current ?? videoRef.current;
             if (!node) return;
