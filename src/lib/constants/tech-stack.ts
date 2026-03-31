@@ -33,7 +33,14 @@ export const TECH_STACK = [
     href: "https://www.typescriptlang.org/",
     icon: TypeScript,
   },
-
+  {
+    title: "OpenAI API",
+    href: "https://platform.openai.com/",
+  },
+  {
+    title: "Anthropic",
+    href: "https://www.anthropic.com/",
+  },
 
   // Databases & Caching
   {
@@ -50,6 +57,14 @@ export const TECH_STACK = [
     title: "Redis",
     href: "https://redis.io/",
     icon: Redis,
+  },
+  {
+    title: "Vector Databases",
+    href: "https://www.pinecone.io/",
+  },
+  {
+    title: "RAG Pipelines",
+    href: "https://www.langchain.com/",
   },
   {
     title: "GCP",
@@ -90,5 +105,20 @@ export const TECH_STACK = [
     href: "https://pocketbase.io/",
     icon: Yoga
   },
+  {
+    title: "MCP Server Development",
+    href: "https://modelcontextprotocol.io/",
+  },
+  {
+    title: "AI Agent Development",
+    href: "https://www.langchain.com/langgraph",
+  },
+  {
+    title: "Function Calling",
+    href: "https://platform.openai.com/docs/guides/function-calling",
+  },
+  {
+    title: "Prompt Engineering",
+    href: "https://platform.openai.com/docs",
+  },
 ];
-
