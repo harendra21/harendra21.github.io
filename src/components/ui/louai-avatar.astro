@@ -1,6 +1,6 @@
 ---
-import { Picture } from "astro:assets";
-import ImgAvatar from "@/assets/harendra-1_mkyefp.jpg";
+import { Image } from "astro:assets";
+import ImgAvatar from "@/assets/harendra.png";
 import { PROFILE_INFO } from "@/lib/constants/profile";
 
 interface Props {
@@ -15,24 +15,21 @@ const {
   priority = false,
 } = Astro.props;
 
-// Determine image formats for fallback and webp
-const formats = ["avif", "webp"];
 ---
 
 <div
   class:list={[
-    "relative aspect-square overflow-hidden rounded-[1.5rem] border border-border/70 bg-card shadow-[0_20px_60px_rgba(0,0,0,0.12)]",
+    "relative aspect-square overflow-hidden rounded-[1.75rem] border border-border/70 bg-card shadow-[0_24px_80px_rgba(0,0,0,0.14)]",
     className,
   ]}
 >
-  <Picture
+  <Image
     class="h-full w-full object-cover object-center"
     src={ImgAvatar}
+    alt={`${PROFILE_INFO.displayName}'s avatar`}
     widths={[size, size * 2]}
     sizes={`(max-width: ${size}px) 100vw, ${size}px`}
-    formats={formats}
-    alt={`${PROFILE_INFO.displayName}'s avatar`}
-    quality="mid"
+    quality={85}
     loading={priority ? "eager" : "lazy"}
     decoding="async"
   />

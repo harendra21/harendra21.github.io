@@ -11,18 +11,18 @@ const secondaryCtaClass = buttonVariants({ variant: "outline", size: "lg" });
 const tertiaryCtaClass = buttonVariants({ variant: "ghost", size: "lg" });
 
 const heroSummary =
-  "I build production web apps and AI-powered systems with Golang, Angular, AWS, and GCP. I turn backend complexity and agent workflows into product experiences that feel fast, dependable, and easy to use.";
+  "I build production web apps and AI-powered systems with Golang, Angular, AWS, and GCP. I turn backend complexity, agent workflows, and product delivery into experiences that feel fast, dependable, and easy to use.";
 
 const highlights = [
-  "8+ years building web products",
-  "Production-focused engineering",
-  "Code reviews and team mentoring",
+  "8+ years building web products.",
+  "Production-focused engineering.",
+  "Code reviews and team mentoring.",
 ] as const;
 
 const focusAreas = [
   "Golang",
   "Angular",
-  "AWS / GCP",
+  "AWS, GCP",
   "Kubernetes",
   "AI Agents",
   "MCP Servers",
@@ -38,11 +38,11 @@ const focusAreas = [
 
   <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.85fr)] lg:items-start">
     <div class="space-y-6">
-      <Badge>Open to backend, full-stack, and AI roles</Badge>
+      <Badge>Backend, full-stack, and AI engineering</Badge>
 
       <div class="space-y-4">
         <p class="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-          Portfolio / Resume / Projects
+          Portfolio, Resume, Projects
         </p>
 
         <div class="space-y-3">
@@ -59,6 +59,21 @@ const focusAreas = [
         <p class="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
           {heroSummary}
         </p>
+
+        <div class="grid gap-3 pt-2 sm:grid-cols-3">
+          <div class="rounded-2xl border border-border/70 bg-card/70 p-3">
+            <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Focus</p>
+            <p class="mt-1 text-sm font-semibold">Reliable software</p>
+          </div>
+          <div class="rounded-2xl border border-border/70 bg-card/70 p-3">
+            <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Strength</p>
+            <p class="mt-1 text-sm font-semibold">Backend systems and product delivery</p>
+          </div>
+          <div class="rounded-2xl border border-border/70 bg-card/70 p-3">
+            <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Current</p>
+            <p class="mt-1 text-sm font-semibold">AI workflows and MCP tooling</p>
+          </div>
+        </div>
       </div>
 
       <div class="flex flex-wrap gap-3">
@@ -89,7 +104,7 @@ const focusAreas = [
     </div>
 
     <aside class="relative lg:pt-4">
-      <div class="rounded-[2rem] border bg-card/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur dark:shadow-[0_20px_60px_rgba(0,0,0,0.32)]">
+      <div class="rounded-[2rem] border border-border/70 bg-card/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur dark:shadow-[0_20px_60px_rgba(0,0,0,0.32)]">
         <div class="flex items-center justify-between gap-3">
           <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
             Visual intro
@@ -100,20 +115,20 @@ const focusAreas = [
 
         <div class="mt-4">
           <LouaiAvatar
-            className="mx-auto w-full max-w-[20rem]"
-            size={720}
+            className="mx-auto w-full max-w-[18rem]"
+            size={640}
             priority={true}
           />
         </div>
 
-        <div class="mt-5 border-t border-dashed pt-4">
+        <div class="mt-5 border-t border-border/70 pt-4">
           <p class="text-sm font-semibold text-foreground">
             Building reliable products and AI systems that are easy to ship and easy to use.
           </p>
 
           <div class="mt-3 grid gap-2">
             {highlights.map(item => (
-              <div class="flex items-center gap-2 rounded-2xl border bg-background/70 px-3 py-2 text-sm text-muted-foreground">
+              <div class="flex items-center gap-2 rounded-2xl border border-border/70 bg-background/70 px-3 py-2 text-sm text-muted-foreground">
                 <div class="size-1.5 shrink-0 rounded-full bg-primary" />
                 {item}
               </div>
@@ -121,7 +136,7 @@ const focusAreas = [
           </div>
         </div>
 
-        <div class="mt-5 border-t border-dashed pt-4">
+        <div class="mt-5 border-t border-border/70 pt-4">
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
             Quick links
           </p>
@@ -132,7 +147,7 @@ const focusAreas = [
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+                class="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
               >
                 <link.icon className="size-4" />
                 {link.name}
@@ -140,7 +155,7 @@ const focusAreas = [
             ))}
             <a
               href={`mailto:${PROFILE_INFO.email}`}
-              class="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+              class="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
             >
               {PROFILE_INFO.email}
             </a>

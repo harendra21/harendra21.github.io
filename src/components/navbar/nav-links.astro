@@ -22,18 +22,18 @@ const isActive = (path: string) => {
       <a
         href={link.href}
         class={cn(
-          "group relative flex flex-col items-center justify-center text-xs font-medium text-foreground/70 duration-150 hover:text-primary lg:text-sm"
+          "group relative flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-medium text-foreground/70 transition-colors duration-150 hover:bg-accent hover:text-foreground"
         )}
       >
-        <span class={cn("mb", isActive(link.href) && "text-primary")}>
+        <span class={cn(isActive(link.href) && "text-foreground")}>
           {link.label}
         </span>
 
         <span
           class={cn(
-            "absolute -bottom-px h-[1px] rounded-full bg-primary transition-all duration-150",
-            isActive(link.href) ? "w-full" : "w-0",
-            "group-hover:w-full"
+            "absolute inset-x-3 -bottom-1 h-px rounded-full bg-primary transition-all duration-150",
+            isActive(link.href) ? "opacity-100" : "opacity-0",
+            "group-hover:opacity-100"
           )}
         />
       </a>

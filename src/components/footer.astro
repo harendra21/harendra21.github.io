@@ -3,16 +3,16 @@ import { SOCIAL_LINKS } from "@/lib/constants";
 import { PROFILE_INFO } from "@/lib/constants/profile";
 ---
 
-<footer class="w-full border-t border-dashed md:border-b">
+<footer class="w-full border-t border-border/70 bg-background/80 backdrop-blur">
   <div
-    class="mx-auto flex max-w-3xl flex-col gap-4 border-dashed px-4 py-4 md:border-x lg:flex-row lg:items-center lg:justify-between"
+    class="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8"
   >
     <div class="space-y-1">
-      <p class="text-sm font-semibold">
+      <p class="text-sm font-semibold tracking-tight">
         {PROFILE_INFO.displayName}
       </p>
-      <p class="text-sm text-foreground/70">
-        Open to backend and full-stack opportunities. Reach out at
+      <p class="max-w-2xl text-sm leading-6 text-foreground/70">
+        Open to backend, full-stack, and AI engineering roles. Reach out at
         <a
           href={`mailto:${PROFILE_INFO.email}`}
           class="font-medium text-primary underline underline-offset-4"
@@ -27,7 +27,7 @@ import { PROFILE_INFO } from "@/lib/constants/profile";
         href={PROFILE_INFO.resumeLink}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm font-medium text-primary underline underline-offset-4"
+        class="rounded-full border border-border/70 bg-card/70 px-3 py-1.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
       >
         Resume
       </a>

@@ -12,18 +12,18 @@ const { className } = Astro.props;
 
 <nav
   class:list={[
-    "screen-line-after sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+    "screen-line-after sticky top-0 z-50 w-full border-b border-border/70 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60",
     className,
   ]}
 >
   <div
-    class="mx-auto flex max-w-3xl items-center justify-between px-4 py-1 md:border-x"
+    class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
   >
     <a href="/">
-      <h1 class="text-xl font-bold">{PROFILE_INFO.logo}</h1>
+      <h1 class="text-lg font-black tracking-tight sm:text-xl">{PROFILE_INFO.logo}</h1>
     </a>
 
-    <div class="flex items-center justify-center gap-4">
+    <div class="flex items-center justify-center gap-3 rounded-full border border-border/70 bg-card/70 px-2 py-1 shadow-sm backdrop-blur">
       <NavLinks />
       <ModeToggle />
     </div>

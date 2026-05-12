@@ -2,16 +2,17 @@ import type { Experience } from "../types";
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Vendasta Technology (India) Private Limited - 2 Years, 6 Months",
+    company: "Vendasta Technology (India) Private Limited · 3 years, 6 months",
     positions: [
       {
-        title: "Software Developer - III",
-        year: "Nov, 2023 - present",
+        title: "Software Developer III",
+        year: "Nov 2023 - Present",
         description: `
 - ♦ Developed **end-to-end features** across the stack using **Golang, Angular, and GCP**.
 - ♦ Conducted **code reviews**, mentored junior developers, and provided guidance on best practices.
 - ♦ Worked closely with **DevOps engineers** to deploy backend infrastructure on **Kubernetes**.
-- ♦ Partnered with **AI engineers** to integrate **OpenAI models (text completion)**.
+- ♦ Partnered with **AI engineers** to integrate **OpenAI-powered features**, including text generation workflows and internal tooling.
+- ♦ Explored **MCP-based workflows** and AI-assisted developer experiences for automation and productivity.
             `,
         skills: [
           "Golang",
@@ -20,7 +21,10 @@ export const EXPERIENCES: Experience[] = [
           "Kubernetes",
           "Docker",
           "gRPC",
-          "OpenAI",
+          "OpenAI API",
+          "MCP",
+          "LLMs",
+          "Prompt Engineering",
           "MySQL",
           "Pub/Sub",
           "Temporal",
@@ -33,21 +37,19 @@ export const EXPERIENCES: Experience[] = [
         ],
       },
       {
-        title: "Software Developer - II",
-        year: "Oct, 2022 - Nov, 2023",
+        title: "Software Developer II",
+        year: "Oct 2022 - Nov 2023",
         description: ``,
-        skills: [
-        ],
+        skills: [],
       },
     ],
   },
-
   {
-    company: "Aakash EduTech Private Limited (Byjus) - 2 Years, 5 Months",
+    company: "Aakash EduTech Private Limited (Byju's) · 2 years, 5 months",
     positions: [
       {
         title: "Software Engineer",
-        year: "Jul, 2020 - Oct, 2022",
+        year: "Jul 2020 - Oct 2022",
         description: `
 - ♦ Developed **full-stack applications** using **Golang, Angular, and Node.js**.
 - ♦ Designed and implemented **RESTful APIs** using **Golang**.
@@ -61,22 +63,21 @@ export const EXPERIENCES: Experience[] = [
           "AWS",
           "Docker",
           "Git",
-          "Jira"
+          "Jira",
         ],
       },
     ],
   },
-
   {
-    company: "Queppelin - A Metaverse Development Company - 1 Year, 1 Month",
+    company: "Queppelin - A Metaverse Development Company · 1 year, 1 month",
     positions: [
       {
         title: "Full-Stack Developer",
-        year: "Jul, 2019 - Jul 2020",
+        year: "Jul 2019 - Jul 2020",
         description: `
-- ♦ Responsible to create the rest API using PHP(laravel) and handling the backend.
+- ♦ Built REST APIs using **PHP (Laravel)** and handled backend development.
 - ♦ Developed the PWA application using **Angular**.
-- ♦ Developed the Android applications using **Angular** and **Ionic Framework**.
+- ♦ Developed Android applications using **Angular** and **Ionic Framework**.
             `,
         skills: [
           "PHP",
@@ -85,33 +86,32 @@ export const EXPERIENCES: Experience[] = [
           "AWS",
           "Git",
           "Ionic Framework",
-          "Javascript",
+          "JavaScript",
           "HTML",
           "CSS",
         ],
       },
     ],
   },
-
   {
-    company: "Aabhyasa Technologies Pvt Ltd - 1 Year, 3 Months",
+    company: "Aabhyasa Technologies Pvt Ltd · 1 year, 3 months",
     positions: [
       {
         title: "Web Developer",
-        year: "May, 2018 - Jul 2019",
+        year: "May 2018 - Jul 2019",
         description: `
-- ♦ Responsible for creating and managing web applications using Laravel(PHP), Javascript, HTML, CSS, and AWS.
-- ♦ Developed Web applications using **Laravel** and **Codeigniter**.
+- ♦ Created and managed web applications using **Laravel (PHP)**, **JavaScript**, **HTML**, **CSS**, and **AWS**.
+- ♦ Developed web applications using **Laravel** and **CodeIgniter**.
             `,
         skills: [
           "PHP",
           "Laravel",
-          "Codeigniter",
+          "CodeIgniter",
           "Angular",
           "MySQL",
           "AWS",
           "Git",
-          "Javascript",
+          "JavaScript",
           "HTML",
           "CSS",
         ],
@@ -119,36 +119,35 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    company: "Aviance Sales Mart Pvt. Ltd. - 1 Year, 1 Month",
+    company: "Aviance Sales Mart Pvt. Ltd. · 1 year, 1 month",
     positions: [
       {
         title: "Web Developer",
-        year: "May, 2017 - May 2018",
+        year: "May 2017 - May 2018",
         description: `
-- ♦ Responsible for creating and managing web applications using PHP, Javascript, HTML, and CSS.
-- ♦ Developed Web applications using **Codeigniter**.
+- ♦ Created and managed web applications using **PHP**, **JavaScript**, **HTML**, and **CSS**.
+- ♦ Developed web applications using **CodeIgniter**.
             `,
         skills: [
           "PHP",
-          "Codeigniter",
+          "CodeIgniter",
           "MySQL",
-          "Javascript",
+          "JavaScript",
           "HTML",
           "CSS",
         ],
       },
     ],
   },
-
   {
     company: "Education",
     positions: [
       {
-        title: "Bachelor of Technology (B.Tech) in Computer Science and Engineering,",
+        title: "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
         year: "Aug 2013 - May 2017",
         description: `
 - ♦ Built a strong foundation in **software engineering**, focusing on **web development**.
-- ♦ Gained hands-on experience with **PHP, HTML, CSS and Javascript**, enhancing problem-solving and system-level programming skills.
+- ♦ Gained hands-on experience with **PHP**, **HTML**, **CSS**, and **JavaScript**, strengthening problem-solving and system-level programming skills.
 - ♦ Developed expertise in **relational databases**.
 - ♦ Strengthened **communication and teamwork skills** through group projects, presentations, and technical discussions.
             `,
@@ -156,7 +155,7 @@ export const EXPERIENCES: Experience[] = [
           "PHP",
           "HTML",
           "CSS",
-          "Javascript",
+          "JavaScript",
           "WordPress",
           "MySQL",
           "Algorithms",
@@ -177,7 +176,7 @@ export const EXPERIENCES: Experience[] = [
           "Physics",
           "Chemistry",
           "English",
-          "Hindi"
+          "Hindi",
         ],
       },
       {
@@ -198,4 +197,3 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
 ];
-

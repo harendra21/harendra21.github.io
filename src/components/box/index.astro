@@ -6,6 +6,12 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<section class:list={["md:border-x", className]}>
+<section
+  class:list={[
+    "overflow-hidden rounded-[1.75rem] border border-border/70 bg-card/80 shadow-[0_20px_60px_rgba(0,0,0,0.05)] backdrop-blur",
+    "md:border-x",
+    className,
+  ]}
+>
   <slot />
 </section>

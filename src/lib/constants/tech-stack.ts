@@ -44,8 +44,8 @@ export const TECH_STACK = [
 
   // Databases & Caching
   {
-    title: "Mysql",
-    href: "https://www.mongodb.com/",
+    title: "MySQL",
+    href: "https://www.mysql.com/",
     icon: MySQL,
   },
   {
@@ -91,19 +91,21 @@ export const TECH_STACK = [
     title: "Git",
     href: "https://git-scm.com/",
     icon: Git,
-  }, {
+  },
+  {
     title: "Appwrite",
     href: "https://appwrite.io",
-    icon: Appwrite
+    icon: Appwrite,
   },
   {
     title: "Supabase",
     href: "https://supabase.com/",
-    icon: Supabase
-  },{
+    icon: Supabase,
+  },
+  {
     title: "Pocketbase",
     href: "https://pocketbase.io/",
-    icon: Yoga
+    icon: Yoga,
   },
   {
     title: "MCP Server Development",
